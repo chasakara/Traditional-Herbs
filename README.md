@@ -1,39 +1,98 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Traditional Herbs 
 
-Welcome USER_NAME,
+Traditional Herbs is a website that encourages the use of 
+traditional herbs to cure some mild infections or mild pains 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+### Features
 
-## Gitpod Reminders
+#### As a user l want 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* to know what each herb cures 
 
-`python3 -m http.server`
+* to know how to prepaire the herbs
 
-A blue button should appear to click: *Make Public*,
+* to know the effectiveness rating of the herbs 
 
-Another blue button should appear to click: *Open Browser*.
+* to read reviews about the medicine 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* to add my own herbs
 
-A blue button should appear to click: *Make Public*,
+* to edit my own herbs
 
-Another blue button should appear to click: *Open Browser*.
+* to delete my own herbs
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+* to add my own herbs
 
-## Updates Since The Instructional Video
+### Future Features
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+### Wireframes
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Technologies Used 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[https://www.gitpod.io/] - an online IDE for developing this project.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Front End
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[https://developer.mozilla.org/en-US/docs/Web/HTML] - to build the foundation of the project.
 
---------
+[https://developer.mozilla.org/en-US/docs/Web/CSS] - to create custom styles.
 
-Happy coding!
+#### Back End
+
+[https://www.python.org/] - back-end programming language used in this project.
+
+[https://flask.palletsprojects.com/en/1.1.x/] - microframework for building and rendering pages.
+
+[https://www.mongodb.com/] -  NoSQL database for storing back-end data.
+
+[https://jquery.com/] - to simplify DOM manipulation
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript] - to create and control dynamic website content
+
+[https://pymongo.readthedocs.io/en/stable/] - for Python to get access the MongoDB database.
+
+[https://www.heroku.com/] - to host the project.
+
+#### Libraries 
+
+[https://fonts.google.com/] - to import fonts.
+
+[https://fontawesome.com/] - to provide icons used across the project.
+
+[https://getbootstrap.com/] - Is a framework to help you design websites faster and easier. It includes HTML and CSS based design templates
+
+### Testing
+
+### Problems encountered
+ 
+
+### Deployed on Heroku at { website URL HERE Traditional Herbs].
+
+Clone the repository by copying the clone url
+In the terminal type git clone followed by the copied url
+cd into Traditional Herbs
+In the terminal type pip3 install -r requirements.txt to install all the dependencies
+Create an account on Heroku if you don't have one yet and create a new app
+In the terminal, type echo "web: python main.py" > Procfile
+Create a new folder inside the apps directory called secret_settings and in it a .env file or change path in app_setup.py and create the .env file anywhere you'd like
+In the .env file set DBNAME, URI and SECRET_KEY
+In the terminal, heroku login
+git init to create a new repository
+heroku git:remote -a (name of your heroku app, no brackets)
+git add .
+git commit -m "Initial commit"
+git push heroku master
+heroku ps:scale web=1
+In your heroku app navigate to settings and reveal config vars, set IP = 0.0.0.0, PORT = 5000, DBNAME, URI and SECRET_KEY
+restart all dynos and open your heroku app
+
+### Credits
+
+### Contents 
+
+### Media
+
+### Acknowdgements
+
+#### This website is for educational purpose only 
+
