@@ -26,7 +26,8 @@ CKEditor(app)
 def index():
     herbs = mongo.db.herbs
     top_trending = herbs.aggregate([{'$sample': {'size': 4}}])
-    return render_template('index.html', top_trending=top_trending,)
+    print(top_trending)
+    return render_template('index.html', top_trending=top_trending)
 
 
 @app.route('/all_herbs')
@@ -54,7 +55,7 @@ def my_herbs():
 
 
 @app.route('/herb/<herb_id>')
-def herb(herb_id): 
+def herb(herb_id):
     herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
     #reviews = mongo.db.reviews.find({'_id': ObjectId(herb_id)})
     if 'username' in session:
