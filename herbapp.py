@@ -24,8 +24,9 @@ CKEditor(app)
 @app.route('/')
 @app.route("/index")
 def index():
+    # Generate 4 random herbs from the DB
     herbs = mongo.db.herbs
-    top_trending = herbs.aggregate([{'$sample': {'size': 4}}])
+    top_trending = herbs.aggregate([{"$sample": {"size": 4}}])
     return render_template('index.html', top_trending=top_trending)
 
 
