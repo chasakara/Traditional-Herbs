@@ -26,7 +26,6 @@ CKEditor(app)
 def index():
     herbs = mongo.db.herbs
     top_trending = herbs.aggregate([{'$sample': {'size': 4}}])
-    print(top_trending)
     return render_template('index.html', top_trending=top_trending)
 
 

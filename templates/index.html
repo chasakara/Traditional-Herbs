@@ -10,10 +10,33 @@
  <h2>Trending this month</h2>
 </div>
 <div class="row">
-{% for herb in top_trending %} 
-  <div class="col-sm-12 col-md-3 col-lg-3">
-        {% include "all_herbs.html" %} 
-  </div>
+{% for herb in herbs %} 
+  <div class="col-md-4 col-lg-3 col-sm-12">
+<div class="card cardadjustment">
+<a href="{{ url_for('herb', herb_id=herb._id) }}"> 
+  {% if herb.herb_image %}
+    <img src="{{herb.herb_image}}" class="herb_image card-img-top responsive-img" alt="{{herb.herb_name}}">
+  {% else %}
+    <img src="{{ url_for('static', filename='herbsimages/herb_placholder.jpg') }}"
+            class="responsive-img" alt="No Herb image available" />
+  {% endif %}      
+</a>
+  <div class="card-body">
+    <div class="cu">
+      <h5 class="card-title">{{ herb.herb_name }}</h5>
+    </div>
+    <div>
+      <h5 class="card-title cu">{{ herb.herb_cure }}</h5>
+    </div>
+    <div class="reviewblock">
+   
+      <a href="{{ url_for('all_reviews') }} " class="review"> Reviews </a>
+      <a href=" {{ url_for('add_review') }}" class="+"> + </a>
+    </div>
+ 
+</div>
+</div>
+</div>
 {% endfor %}
 </div>
 </div>

@@ -77,9 +77,9 @@ span{color: green;}
                     font-size: 20px;
                     width: 130px;}
 
-.card {margin: 35px;
-      border: 1px solid springgreen;
-      border-radius: 4px;}
+.card {margin: 10px;
+       border: 1px solid springgreen;
+       border-radius: 4px;}
 
 .rev-display {display: inline-block;}
 
@@ -90,8 +90,17 @@ span{color: green;}
              background-size: cover;
              }
 
-.reviewblock a {display: inline-block;
-padding: 10px;}
+.reviewblock  {display: flex;  
+                justify-content: space-between;  }
+
+.review {padding: 4px;}
+
+.plus {padding: 4px;
+      text-decoration: none;}
+
+.reviewblock a:hover {font-size: 120%;}
+
+.cardadjustment a:hover { box-shadow: 3px 3px 5px 6px #ccc; }
 
 /*---- Herb Page ---*/
 
@@ -203,9 +212,16 @@ padding: 10px;}
 
 /*---- footer---*/
 
+.copyright {margin: 2px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;}
+
 .social-links { border-top: 1px solid limegreen;}
 
-.social-links-center {text-align: center;}
+.social-links-center {display: flex;
+justify-content: center;
+align-items: center;}
 
 .fa-facebook {color: blue;}
 

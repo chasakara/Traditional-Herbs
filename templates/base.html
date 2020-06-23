@@ -57,32 +57,31 @@
 </nav>
 </header>
 <body>
-  {% with messages = get_flashed_messages() %} 
-            {% if messages %} 
-                {% for message in messages %}
-                    <p class="error-message">
-                    {{ message }}
-                    </p>
-                {% endfor %} 
-            {% endif %} 
-        {% endwith %}
+ <div class="container-fluid">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+    <div class="alert text-center alert-{{ category }} alert-dismissible fade show" role="alert">
+      <span>{{ message }}</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
 
 	{% block content %} 
     {% endblock %}
 
 <footer class="social-links">
-      <div class="row no-gutters">
-        <div class="col-sm-12 col-md-12 social-links-center">
+        <div class="social-links-center">
           <ul>
             <li><a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook fa-2x"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"> <i class="fab fa-instagram fa-2x"></i></a></li>
             <li><a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter fa-2x"></i></a></li>
             <li><a href="https://www.youtube.com" target="_blank"> <i class="fab fa-youtube fa-2x"></i></a></li>
           </ul>
-          <br>
-           <p class="copyright">Copyright &copy; Traditional Herbs:2020</p> 
-       </div>
-      </div>
+          </div>
+          <div class="copyright"><p>Copyright &copy; Traditional Herbs:2020</p></div>
  </footer>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
