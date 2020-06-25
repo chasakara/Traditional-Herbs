@@ -2,40 +2,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container-fluid  allherbsBg">
-{% if session['logged_in'] == True  %}
-   {% else %}
- {% endif %}
-  <!--Cycles through all the herbs-->
-  <div class="row">
-  {% for herb in herbs %}
-  
-<div class="col-md-4 col-lg-3 col-sm-12 ">
-<div class="card cardadjustment">
-<a href="{{ url_for('herb', herb_id=herb._id) }}"> 
-  {% if herb.herb_image %}
-    <img src="{{herb.herb_image}}" class="herb_image card-img-top responsive-img" alt="{{herb.herb_name}}">
-  {% else %}
-    <img src="{{ url_for('static', filename='herbsimages/herb_placholder.jpg') }}"
-            class="responsive-img" alt="No Herb image available" />
-  {% endif %}      
-</a>
-  <div class="card-body">
-    <div class="cu">
-      <h5 class="card-title">{{ herb.herb_name }}</h5>
-    </div>
-    <div>
-      <h5 class="card-title cu">{{ herb.herb_cure }}</h5>
-    </div>
-    <div class="reviewblock">
-      <div><a href="{{ url_for('all_reviews') }} " class="review"> Reviews </a></div>
-      <div><a href=" {{ url_for('add_review') }}" class="plus"> + </a></div>
-    </div>
- 
-</div>
-</div>
-</div>
-{% endfor %}
-</div>
- 
+	{% if session['logged_in'] == True  %}
+	{% else %}
+	{% endif %}
+	<!--Cycles through all the herbs-->
+	<div class="row">
+		{% for herb in herbs %}
+		{% include 'componets/herbcards.html' %}
+		{% endfor %}
+	</div>
 </div>
 {% endblock %}

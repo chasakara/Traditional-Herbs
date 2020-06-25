@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,15 +9,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
 <title>Traditional Herbs</title>
+{% block head %}
+{% endblock %}
 </head>
 <header>
 <nav class="navbar navbar-expand-md navbarBg ">
-  <a class="navbar-brand" href="{{ url_for('index')}}">LOGO</a>
+  <a class="navbar-brand" href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='herbsimages/herblogo1.jpg') }}" class="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ">
       {% if session['logged_in'] == True  %}
       <li>
         <a class=" nav-link" href="{{url_for('my_herbs')}}" title="List your herbs">My Herbs</a>
@@ -46,13 +49,11 @@
           {% endif %} 
     </ul>
  <div class="username">
-    {% block Head %}
     <!--Initialize ckeditor-->
     {{ ckeditor.load(pkg_type="basic") }}
     <!--Puts the Logged in users name in header-->
     {% if session['logged_in'] == True %}
-    
-    {% else %} {% endif %} {% endblock Head %}
+    {% else %} {% endif %} 
   </div>
 </nav>
 </header>
@@ -68,10 +69,10 @@
     </div>
     {% endfor %} {% endif %} {% endwith %}
   </div>
-
+<main>
 	{% block content %} 
     {% endblock %}
-
+</main>
 <footer class="social-links">
         <div class="social-links-center">
           <ul>

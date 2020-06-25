@@ -24,9 +24,9 @@ CKEditor(app)
 @app.route('/')
 @app.route("/index")
 def index():
-    # Generate 4 random herbs from the DB
     herbs = mongo.db.herbs
-    top_trending = herbs.aggregate([{"$sample": {"size": 4}}])
+    top_trending = ([herb for herb in herbs.aggregate
+                    ([{"$sample": {"size": 4}}])])
     return render_template('index.html', top_trending=top_trending)
 
 
@@ -41,7 +41,7 @@ def all_herbs():
                                today=today,
                                herbs=mongo.db.herbs.find().sort("_id", -1))
     # Puts the herbs in order Newest to oldest but with out the login username
-    return render_template("all_herbs.html",
+    return render_template("all_herbs.html", title='All Herbs',
                            herbs=mongo.db.herbs.find().sort("_id", -1))
 
 

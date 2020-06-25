@@ -18,7 +18,14 @@ body {background-color:rgb(167, 224, 141);}
 
 /*---- Navbar ---*/
 
+.logo {height: 40px;
+       width: 180px}
+
 .navbarBg {background-color: green;}
+
+.navbar {padding-top: 0;
+         padding-left: 0.2rem;
+         padding-bottom: 0;}
 
 ul { list-style-type: none;
      margin: 0;
@@ -29,7 +36,7 @@ li { float: right;}
 
 li a { color: white;
        text-align: center;
-       padding: 14px 16px;
+       padding: 5px 16px;
        text-decoration: none;}
 
 li a:hover { background-color: rgba(60, 109, 3, 0.719);
@@ -40,7 +47,7 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
 
 /*---- Home Page ---*/
 
-.home-image {margin-top: 10px;}
+.home-image {margin-top: 5px;}
 
 .home-image img { background-size: cover;
                   background-repeat: no-repeat;
@@ -144,6 +151,16 @@ span{color: green;}
 .writenby h6 {display: inline;}
 
 .datewriten {text-align: center;}
+
+.DeleteHerb {background-color: red;
+             color: white;}
+
+.EditHerb { background-color: green;
+        color: white;}
+
+.Addreview
+
+.BackHome
 
 /*---- Add Herb ---*/
 

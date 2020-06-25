@@ -52,15 +52,13 @@
     <div class="container">
         <div class="row justify-content-center ">
             {% if session_name == herb.username %}
-            <a id="edit-btn" href="{{url_for('edit_herb', herb_id=herb._id)}}" class="btn-primary ">Edit Herb</a>
+            <a id="edit-btn" href="{{url_for('edit_herb', herb_id=herb._id)}}" class="btn-primary EditHerb ">Edit Herb</a>
             <!--Sends you to a delete page for clicked herb-->
-            <a id="delete-btn" href="{{url_for('delete_herb', herb_id=herb._id)}}" class="  btn-primary ">Delete Herb</a>
-            <a href="{{url_for('add_review')}}" class="btn-sm ">Add review</a>
+            <a id="delete-btn" href="{{url_for('delete_herb', herb_id=herb._id)}}" class="  btn-primary DeleteHerb ">Delete Herb</a>
+            <a href="{{url_for('add_review')}}" class="btn-sm Addreview ">Add review</a>
             <!--Sends you back to all_herbs-->
-            <a href="{{ url_for('all_herbs') }}" class="btn-sm ">Back Home</a>
             {% else %}
-            <a href="{{ url_for('all_herbs') }}" class="btn-sm ">Back Home</a>
-            <a href="{{ url_for('add_review' )}}" class="btn-sm ">Add review</a>
+            <a href="{{ url_for('add_review' )}}" class="btn-sm Addreview">Add review</a>
             {% endif %}
         </div>
 	</div>
