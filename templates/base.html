@@ -19,10 +19,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   
-    <ul class="navbar-nav ">
+    <ul  class="navbar-nav ml-auto">
       {% if session['logged_in'] == True  %}
       <li>
         <a class=" nav-link" href="{{url_for('my_herbs')}}" title="List your herbs">My Herbs</a>
+      </li>
+       <li>
+        <a class=" nav-link" href="{{url_for('account_settings')}}" title="List your herbs">My Herbs</a>
       </li>
       <li>
         <a class=" nav-link" href="{{url_for('all_herbs')}}" title="List your all herbs">All Herbs</a>
@@ -36,6 +39,9 @@
       <li class="nav-item">   
         <a class=" nav-link" title="Logout" href="{{url_for('logout')}}">Logout</a>
       </li>
+      <div>
+   <h5>Greetings {{ session.username }}</h5>
+      </div>
           {% else %}
       <li> 
          <a class=" nav-link" href="{{url_for('all_herbs')}}" title="List your all herbs">All Herbs</a>
@@ -48,13 +54,7 @@
       </li>
           {% endif %} 
     </ul>
- <div class="username">
-    <!--Initialize ckeditor-->
-    {{ ckeditor.load(pkg_type="basic") }}
-    <!--Puts the Logged in users name in header-->
-    {% if session['logged_in'] == True %}
-    {% else %} {% endif %} 
-  </div>
+ 
 </nav>
 </header>
 <body>
@@ -74,16 +74,20 @@
     {% endblock %}
 </main>
 <footer class="social-links">
-        <div class="social-links-center">
-          <ul>
+  <div class=" social-icon-copyright">
+    <div class="social-links-center">
+         <ul>
             <li><a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook fa-2x"></i></a></li>
             <li><a href="https://www.instagram.com" target="_blank"> <i class="fab fa-instagram fa-2x"></i></a></li>
             <li><a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter fa-2x"></i></a></li>
             <li><a href="https://www.youtube.com" target="_blank"> <i class="fab fa-youtube fa-2x"></i></a></li>
-          </ul>
-          </div>
-          <div class="copyright"><p>Copyright &copy; Traditional Herbs:2020</p></div>
- </footer>
+        </ul>
+    </div>
+    <div class="copyright">
+       <p>Copyright &copy; Traditional Herbs:2020</p>
+    </div>
+  </div>
+</footer>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>

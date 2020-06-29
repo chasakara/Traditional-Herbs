@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rajdhani|Ruda&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
 
 * {margin: 0;
    padding: 0;}
 
-body {background-color:rgb(167, 224, 141);}
+body {background-color:rgb(187, 219, 171);}
 
 .inputstyles {
     border-left: 0 ;
@@ -56,6 +57,15 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
                   display: block;
                   margin-left: auto;
                   margin-right: auto; }
+
+.featuredherbs {margin: 10px;
+                padding: 3px;}
+
+.featuredherbs h2 {font-family: 'Piedra', cursive;
+                   }
+
+.featured4herbs {border-top:1px solid limegreen;
+                 top:50%;}
 
 /*---- My Herbs ---*/
 
@@ -233,11 +243,13 @@ span{color: green;}
             justify-content: center;
             align-items: center;}
 
+.social-icon-copyright {margin: 5px 0;}
+
 .social-links { border-top: 1px solid limegreen;}
 
 .social-links-center {display: flex;
-justify-content: center;
-align-items: center;}
+                      justify-content: center;
+                      align-items: center;}
 
 .fa-facebook {color: blue;}
 

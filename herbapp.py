@@ -25,9 +25,9 @@ CKEditor(app)
 @app.route("/index")
 def index():
     herbs = mongo.db.herbs
-    top_trending = ([herb for herb in herbs.aggregate
-                    ([{"$sample": {"size": 4}}])])
-    return render_template('index.html', top_trending=top_trending)
+    featured = ([herb for herb in herbs.aggregate
+                ([{"$sample": {"size": 4}}])])
+    return render_template('index.html', featured=featured)
 
 
 @app.route('/all_herbs')
@@ -123,11 +123,31 @@ def delete_herb(herb_id):
     if 'username' in session:
         herbs = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
         if session['username'] == herbs['username']:
-            herb = mongo.db.herbs.remove({'_id': ObjectId(herb_id)})
+            herbs = mongo.db.herbs.remove({'_id': ObjectId(herb_id)})
             return redirect(url_for('all_herbs'))
         flash('Sorry! You must be logged in first')
         return redirect(url_for('login'))
     flash('Sorry! You must be logged in first')
+    return redirect(url_for('login'))
+
+
+@app.route('/add_review', methods=['POST', 'GET'])
+def add_review():
+    today_string = datetime.datetime.now().strftime('%d/%m/%y')
+    today_iso = datetime.datetime.now()
+    if 'username' in session:
+        if request.method == 'POST':
+            reviews = mongo.db.reviews
+            reviews.insert({
+                'username': session['username'],
+                'your_review': request.form.get('your_review'),
+                'date_added': today_string,
+                'date_iso': today_iso})
+            flash('Your Review has been successfully added')
+            return redirect(url_for('all_reviews'))
+        return render_template("add_review.html",
+                               session_name=session['username'])
+    flash('You must be logged in to add a review')
     return redirect(url_for('login'))
 
 
@@ -144,13 +164,14 @@ def signup():
                 'name': request.form['username'].capitalize(),
                 'email': request.form['userEmail'].lower(),
                 'password': hashpass,
+                'user_herbs': [],
                 'reg_date': time
             })
             session['username'] = request.form['username']
             session['logged_in'] = True
-            flash('Hello ' + session['username'] + ' You have successfull signedup')
+            flash('Hello' + session['username'] + 'You have successfull signedup')
             return redirect(url_for('all_herbs',))
-        flash('That email already exists')
+        flash('That email or username already exists')
         return render_template('signup.html')
     return render_template('signup.html')
 
@@ -166,7 +187,7 @@ def login():
                 session['username'] = login_user['name']
                 session['logged_in'] = True
                 flash('Welcome Back ' +
-                      session['username'] + ' You are now Logged In', 'success')
+                      session['username'] + ' You are now Logged In')
                 return redirect(url_for('index'))
             flash('This Username or Password is invalid')
             return render_template('login.html')
@@ -181,6 +202,54 @@ def logout():
     return redirect(url_for('login'))
 
 
+# Account Settings
+@app.route("/account_settings/<username>")
+def account_settings(username):
+    '''
+    Account settings page - displays username,
+    buttons for change_username, change_password
+    and delete_account pages.
+    '''
+    # prevents guest users from viewing the page
+    if 'username' not in session:
+        flash('You must be logged in to view that page!')
+    users = mongo.db.users
+    users.find_one({'username': session['username']})['username']
+    return render_template('account_settings.html',
+                           username=username, title='Account Settings')
+
+
+# Delete Account
+@app.route("/delete_account/<username>", methods=['GET', 'POST'])
+def delete_account(username):
+    '''
+    DELETE.
+    Remove user's account from the database as well as all herbs
+    created by this user. Before deletion of the account, user is asked
+    to confirm it by entering password.
+    '''
+    # prevents guest users from viewing the form
+    if 'username' not in session:
+        flash('You must be logged in to delete an account!')
+    users = mongo.db.users
+    user = users.find_one({"username": username})
+    # checks if password matches existing password in database
+    if bcrypt.checkpw(user["password"],
+                      request.form.get("confirm_password_to_delete")):
+        # Removes all user's herbs from the Database
+        all_user_herbs = user.get("user_herb")
+        for herb in all_user_herbs:
+            herbs = mongo.db.herbs
+            herbs.remove({"_id": herb})
+        # remove user from database,clear session and redirect to the home page
+        flash("Your account has been deleted.")
+        session.pop("username", None)
+        users.remove({"_id": user.get("_id")})
+        return redirect(url_for("index"))
+    else:
+        flash("Password is incorrect! Please try again")
+        return redirect(url_for("account_settings", username=username))
+
 
 @app.route('/all_reviews')
 def all_reviews():
@@ -188,28 +257,12 @@ def all_reviews():
                            reviews=mongo.db.reviews.find().sort("_id", -1))
 
 
-@app.route('/add_review', methods=['POST', 'GET'])
-def add_review():
-    today_string=datetime.datetime.now().strftime('%d/%m/%y')
-    today_iso=datetime.datetime.now()
-    if 'username' in session:
-        if request.method == 'POST':
-            reviews = mongo.db.reviews
-            reviews.insert({
-                'username': session['username'], 
-                'your_review': request.form.get('your_review'),
-                'date_added': today_string,
-                'date_iso': today_iso})
-            flash('Your Review has been successfully added')
-            return redirect(url_for('all_reviews'))
-        return render_template("add_review.html", session_name=session['username'])
-    flash('You must be logged in to add a review')
-    return redirect(url_for('login'))
-
-#1. Grab the herb._id and pass it into your addreview route.
-#2. Modify the add_review route so that it expects a herb_id, and so that when s review is added, it also adds a review.herb_id field into the database.
-#3. When displaying a herb, use reviews.find with "herb_id": herb_id to get all reviews that have that herb_id.`
-
+'''
+1. Grab the herb._id and pass it into your addreview route.
+2. Modify the add_review route so that it expects a herb_id, and so that when s review is added, it also adds a review.herb_id field into the database.
+3. When displaying a herb, use reviews.find with "herb_id": herb_id to get all reviews that have that herb_id.`
+'''
+ 
 
 @app.errorhandler(404)
 def page_not_found(error):

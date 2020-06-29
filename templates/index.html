@@ -5,13 +5,15 @@
   <div class="home-image">
     <img src="{{ url_for('static', filename='herbsimages/herbindex.jpg') }}" alt="sting" class="img-fluid">
   </div>
-  <div>
-    <h2>Trending this month</h2>
+  <div class="featuredherbs">
+    <h2>Featured Herbs</h2>
   </div>
+  <div class="featured4herbs">
   <div class="row">
-    {% for herb in top_trending %} 
-        {% include "componets/herbcards.html" %} 
+    {% for herb in featured %} 
+        {% include "herbcards.html" %} 
     {% endfor %}
   </div>
+</div>
 </div>
 {% endblock %}

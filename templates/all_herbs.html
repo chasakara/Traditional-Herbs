@@ -2,13 +2,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container-fluid  allherbsBg">
-	{% if session['logged_in'] == True  %}
-	{% else %}
-	{% endif %}
+	
 	<!--Cycles through all the herbs-->
 	<div class="row">
 		{% for herb in herbs %}
-		{% include 'componets/herbcards.html' %}
+		{% include 'herbcards.html' %}
 		{% endfor %}
 	</div>
 </div>
