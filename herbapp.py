@@ -210,11 +210,14 @@ def account_settings(username):
     buttons for change_username, change_password
     and delete_account pages.
     '''
+    users = mongo.db.users
+    print("TESTING SOMETHING")
+    print(users.find_one({'username': session['username']}))
     # prevents guest users from viewing the page
     if 'username' not in session:
         flash('You must be logged in to view that page!')
     users = mongo.db.users
-    users.find_one({'username': session['username']})['username']
+    users.find_one({'username': session['username']})
     return render_template('account_settings.html',
                            username=username, title='Account Settings')
 

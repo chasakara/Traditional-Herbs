@@ -9,22 +9,7 @@
           Delete account
         </a>
     </div>
-
-
-
-<!--Delete Account Modal -->
-<div id="delete-modal-account" class="modal">
-    <div class="modal-content center-align">
-        <h5 class="text-red bold">Delete Account</h5>
-        <div class="divider"></div>
-        <p class="text-red">
-            <i class="fas fa-exclamation-circle margin-top-small" aria-hidden="true"></i> 
-            Deleting account will remove all your recipes from the website.
-        </p>
-        <h6 class="margin-top-small small-text-delete">
-            Are you sure you want to delete your account?
-        </h6>
-
+<div>
         <form action="{{ url_for('delete_account', username = session.username) }}" method="POST">
         <div class="row center-align margin-top-small">
             <div class="input-field col s12">
@@ -54,13 +39,11 @@
 
         <div class="margin-top-small">
             <a href="{{ url_for('account_settings',  username = session.username) }}"
-               class="modal-close btn btn-change btn-secondary waves-effect 
-               waves-light z-depth-2 btn-small-font">
+               class="modal-close">
                Cancel
             </a>
-            <button type="submit" class="btn btn-change btn-red waves-effect
-               waves-light z-depth-2 btn-small-font">
-               Delete Account
+            <button type="submit" class="btn btn-change btn-red">
+               Delete Account form button
             </button>
         </div>
     </form>
