@@ -13,12 +13,12 @@
                 <input type="text" class="form-control sr-only" id="username" value="{{session_name}}" name="username">
             </div>
             <div class="form-group">
-                <label for="herb_name">&nbsp;Herb Name:</label>
-                <input type="text" class="form-control" id="herb_name" name="herb_name" value="{{herb.herb_name}}">
+                <label for="herb_name">&nbsp;Herb Name</label>
+                <input type="text" class="form-control names" id="herb_name" name="herb_name" value="{{herb.herb_name}}">
             </div>
             <div class="form-group">
                 <label for="herb_cure">&nbsp;Herb Cure</label>
-                <input type="text" class="form-control" id="herb_cure" name="herb_cure" value="{{herb.herb_cure}}">
+                <input type="text" class="form-control names" id="herb_cure" name="herb_cure" value="{{herb.herb_cure}}">
             </div>
              <div class="form-group">
                 <i class="material-icons">add_a_photo</i>
@@ -28,19 +28,19 @@
             </div>
             <div class="form-group">
                 <label for="herb_description">&nbsp;Herb Descrition:</label>
-                <textarea class="form-control ckeditor" id="herb_description" name="herb_description" rows="4">
+                <textarea class="form-control ckeditor names" id="herb_description" name="herb_description" rows="4">
                     {{herb.herb_description|safe}}
                 </textarea>
             </div>
             <div class="form-group">
                 <label for="herb_preparation">&nbsp;Herb Preparation</label>
-                <textarea class="form-control ckeditor" id="herb_preparation" name="herb_preparation" rows="5">
+                <textarea class="form-control ckeditor names" id="herb_preparation" name="herb_preparation" rows="5">
                 {{herb.herb_preparation|safe}}
                 </textarea>
             </div>
              <div class="form-group">
                 <label for="herb_usage">&nbsp;Herb Usage</label>
-                <textarea class="form-control ckeditor" id="herb_usage" name="herb_usage" rows="5">
+                <textarea class="form-control ckeditor names" id="herb_usage" name="herb_usage" rows="5">
                 {{herb.herb_usage|safe}}
                 </textarea>
             </div>

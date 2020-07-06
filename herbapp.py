@@ -158,8 +158,8 @@ def signup():
         time = datetime.datetime.now()
         existing_email = users.find_one({'email': request.form['userEmail']})
         if existing_email is None:
-            hashpass = bcrypt.hashpw(
-                request.form['userPassword'].encode('utf-8'), bcrypt.gensalt())
+            hashpass = bcrypt.hashpw(request.form['userPassword'].
+                                     encode('utf-8'), bcrypt.gensalt())
             users.insert({
                 'name': request.form['username'].capitalize(),
                 'email': request.form['userEmail'].lower(),
@@ -169,7 +169,8 @@ def signup():
             })
             session['username'] = request.form['username']
             session['logged_in'] = True
-            flash('Hello' + session['username'] + 'You have successfull signedup')
+            flash('Hello' + session['username'] +
+                  'You have successfull signedup')
             return redirect(url_for('all_herbs',))
         flash('That email or username already exists')
         return render_template('signup.html')
@@ -214,9 +215,8 @@ def account_settings(username):
     print("TESTING SOMETHING")
     print(users.find_one({'username': session['username']}))
     # prevents guest users from viewing the page
-    if 'username' not in session:
-        flash('You must be logged in to view that page!')
-    users = mongo.db.users
+    if 'username' in session:
+        users = mongo.db.users
     users.find_one({'username': session['username']})
     return render_template('account_settings.html',
                            username=username, title='Account Settings')
@@ -232,10 +232,9 @@ def delete_account(username):
     to confirm it by entering password.
     '''
     # prevents guest users from viewing the form
-    if 'username' not in session:
-        flash('You must be logged in to delete an account!')
-    users = mongo.db.users
-    user = users.find_one({"username": username})
+    if 'username' in session:
+        user = mongo.db.users.find_one({"name": username.capitalize()})
+        print("USERNAME", user)
     # checks if password matches existing password in database
     if bcrypt.checkpw(user["password"],
                       request.form.get("confirm_password_to_delete")):
@@ -247,6 +246,7 @@ def delete_account(username):
         # remove user from database,clear session and redirect to the home page
         flash("Your account has been deleted.")
         session.pop("username", None)
+        users = mongo.db.users
         users.remove({"_id": user.get("_id")})
         return redirect(url_for("index"))
     else:
