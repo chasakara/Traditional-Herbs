@@ -13,7 +13,12 @@
       </div> 
     </div>
       <div class="herbimage">
-            <img src="{{herb.herb_image}}" class="img-fluid herb_image_container " id="herb_herb_image" alt="{{herb.herb_name}}">
+             {% if herb.herb_image %}
+    <img src="{{herb.herb_image}}" class="herb_image card-img-top  img-thumbnail  img-fluid" alt="{{herb.herb_name}}">
+  {% else %}
+    <img src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
+            class="herb_image card-img-top img-thumbnail   img-fluid " alt="No Herb image available" />
+  {% endif %} 
       </div>     
         <div class="herbDescription">
         <div>

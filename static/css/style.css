@@ -5,17 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
 
-* {margin: 0;
-   padding: 0;}
+* { margin: 0;
+    padding: 0;}
 
 body {background-color:rgb(187, 219, 171);}
-
-.inputstyles {
-    border-left: 0 ;
-    border-right: 0;
-    border-top: 0;
-    box-shadow: none;
-    background-color: none;}
 
 /*---- Navbar ---*/
 
@@ -132,6 +125,27 @@ span{color: green;}
 
 .herb_image {height: 230px;}
 
+.pagination-center { text-align: center;
+                     margin: 15px 0;}
+
+.pagination {display: inline-block;}
+
+.button-pignation li {float: left;}
+
+.button-pignation a { background-color: limegreen;
+                      color: black;
+                      border-radius: 5px; 
+                      margin: 0 10px;
+                      font-size: 18px;}
+
+.button-pignation a.active {  background-color:rgb(51, 138, 55);
+                                 color: white;
+                                 border: 3px dotted #4CAF50;}
+
+
+.button-pignation li a:hover { background-color: rgba(60, 97, 19, 0.719);
+                               font-size: 125%;}
+
 /*---- Herb Page ---*/
 
 .herbGb {background-image: url("../herbsimages/herbbackground.jpg");       
@@ -143,15 +157,15 @@ span{color: green;}
               margin-bottom: 67px;}
 
 .herbimage{ display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;}
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;}
 
 .herbnamecure_Bg {background-color: limegreen;}
 
 .herb_image_container {width: 90%;
                        margin: 5px auto;
-                       height: 350px;}
+                       height: 400px;}
 
 
 .herbDescription {border: 1px solid limegreen;
@@ -268,7 +282,7 @@ span{color: green;}
 
 .social-icon-copyright {margin: 5px 0;}
 
-.social-links { border-top: 1px solid limegreen;}
+.social-links { border-top: 10px solid limegreen;}
 
 .social-links-center {display: flex;
                       justify-content: center;

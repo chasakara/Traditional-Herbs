@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 import datetime
 import bcrypt
 import re
+import math
 from os import path
 if path.exists("env.py"):
     import env
@@ -36,10 +37,21 @@ def all_herbs():
     # If there is a user logged: Username is printed in the Nav
     if 'username' in session:
         # Puts the herb in order Newest to oldest
+        limit_per_page = 8
+        current_page = int(request.args.get('current_page', 1))
+        # get total of all the herbs in db
+        herbs = mongo.db.herbs
+        number_of_all_rec = herbs.count()
+        pages = range(1, int(math.ceil(number_of_all_rec /
+                                       limit_per_page)) + 1)
+        herbs = herbs.find().sort('_id', -1).skip(
+        (current_page - 1)*limit_per_page).limit(limit_per_page)
         return render_template("all_herbs.html",
                                session_name=session['username'],
-                               today=today,
-                               herbs=mongo.db.herbs.find().sort("_id", -1))
+                               herbs=herbs,
+                               title='All Herbs', current_page=current_page,
+                               pages=pages,
+                               number_of_all_rec=number_of_all_rec)
     # Puts the herbs in order Newest to oldest but with out the login username
     return render_template("all_herbs.html", title='All Herbs',
                            herbs=mongo.db.herbs.find().sort("_id", -1))
@@ -51,7 +63,7 @@ def my_herbs():
     return render_template("all_herbs.html",
                            session_name=session['username'],
                            herbs=mongo.db.herbs.find({
-                               'username': session_name}))
+                               'username': session_name}), title="My Herbs")
 
 
 @app.route('/herb/<herb_id>')
@@ -63,7 +75,6 @@ def herb(herb_id):
                                session_name=session['username'],
                                herb=herb)
     return render_template('herb.html', herb=herb, )
-
 
 
 @app.route('/add_herb', methods=['POST', 'GET'])
