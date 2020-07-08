@@ -58,6 +58,17 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
                   margin-left: auto;
                   margin-right: auto; }
 
+.foreground-text { position: absolute;
+                   top: 40%;
+                   left: 50%;
+                   background-color: rgba(0, 0, 0, 0.7);
+                   transform: translate(-50%, -50%);
+                   color: white;
+                    width: inherit;
+                   padding: 9px;
+    
+}
+
 .featuredherbs {margin: 10px;
                 padding: 3px;}
 
@@ -100,7 +111,7 @@ span{color: green;}
 
 .rev-display {display: inline-block;}
 
-/*---- All herbs Page ---*/
+/*---- All herbs Page Herbcards ---*/
 
 .allherbsBg {background-image: url("../herbsimages/allherbsbackground.jpg");       
              background-repeat: no-repeat;
@@ -119,6 +130,8 @@ span{color: green;}
 
 .cardadjustment a:hover { box-shadow: 3px 3px 5px 6px #ccc; }
 
+.herb_image {height: 230px;}
+
 /*---- Herb Page ---*/
 
 .herbGb {background-image: url("../herbsimages/herbbackground.jpg");       
@@ -132,7 +145,7 @@ span{color: green;}
 .herbimage{ display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;}
+  width: 90%;}
 
 .herbnamecure_Bg {background-color: limegreen;}
 
@@ -166,12 +179,21 @@ span{color: green;}
 .datewriten {text-align: center;}
 
 .DeleteHerb {background-color: red;
-             color: white;}
+             color: white;
+             padding: 2px;
+             margin: 0 10px;
+             border-radius: 6px;}
 
 .EditHerb { background-color: green;
-        color: white;}
+            color: white;
+            padding: 2px;
+            border-radius: 6px;}
 
-.Addreview
+.Addreview {text-decoration: none;
+            background-color: blue;
+            color:white;
+            padding: 2px;
+            border-radius: 6px;}
 
 .BackHome
 
@@ -201,7 +223,7 @@ span{color: green;}
            border-radius: 5px;
            margin-left: auto;}
 
-.signuploinBg {background-image: url("../herbsimages/loginsignup.jpg") !important;
+.signuploinBg {background-image: url("../herbsimages/loginsignup.jpg");
                background-repeat: none;
                background-size: cover; }
     
@@ -260,4 +282,3 @@ span{color: green;}
 
 .fa-youtube {color: red;}
     
-

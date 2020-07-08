@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<div class="col-md-4 col-lg-3 col-sm-12 ">
-<div class="card cardadjustment">
+<div class="col-md-4 col-lg-3 col-sm-12">
+<div class="card cardadjustment heightcard">
 <a href="{{ url_for('herb', herb_id=herb._id) }}"> 
   {% if herb.herb_image %}
-    <img src="{{herb.herb_image}}" class="herb_image card-img-top responsive-img" alt="{{herb.herb_name}}">
+    <img src="{{herb.herb_image}}" class="herb_image card-img-top  img-thumbnail  img-fluid" alt="{{herb.herb_name}}">
   {% else %}
-    <img src="{{ url_for('static', filename='herbsimages/herb_placholder.jpg') }}"
-            class="responsive-img" alt="No Herb image available" />
+    <img src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
+            class="herb_image card-img-top img-thumbnail   img-fluid " alt="No Herb image available" />
   {% endif %}      
 </a>
   <div class="card-body">

@@ -234,12 +234,11 @@ def delete_account(username):
     # prevents guest users from viewing the form
     if 'username' in session:
         user = mongo.db.users.find_one({"name": username.capitalize()})
+        print("xxxxxx")
         print("USERNAME", user)
     # checks if password matches existing password in database
-    if bcrypt.checkpw(user["password"],
-                      request.form.get("confirm_password_to_delete")):
-        # Removes all user's herbs from the Database
-        all_user_herbs = user.get("user_herb")
+
+        all_user_herbs = user.get("user_herbs")
         for herb in all_user_herbs:
             herbs = mongo.db.herbs
             herbs.remove({"_id": herb})
@@ -271,12 +270,6 @@ def all_reviews():
 def page_not_found(error):
     app.logger.info(f'Page not found: {request.url}')
     return render_template('errors/404.html', error=error)
-
-
-@app.errorhandler(500)
-def page_not_found(error):
-    app.logger.info(f'Server Error: {request.url}')
-    return render_template('errors/500.html', error=error)
 
 
 if __name__ == "__main__":
