@@ -2,21 +2,19 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container-fluid">
-  <div class="home-image">
-  <div>
+  <div class="home-image-container">
+  <div class="home-image-img">
     <img src="{{ url_for('static', filename='herbsimages/herbindex.jpg') }}" alt="sting" class="img-fluid">
+  </div>
     <div class="foreground-text">
-    <div class="foreground-text-p">
      <p> Tradition herbs have been years used for many centuries and have shown how effective they are in 
          curing and heling aganist some diseases and even easing the some mild pain. They are many traditionlal 
          herbs which have been well proven to work well and they can be an alternative if you cannot afford some 
-         of f the shelves drugs.</p>
-    </div>
+         of  the shelves drugs.</p>
     <div class="foreground-text-buttond">
-       <a href="{{ url_for('add_herb') }}">Add Herb</a> 
+      <input type="button"><a href="{{ url_for('add_herb') }}">Add Herb</a>
     </div>   
     </div> 
-    </div>
   </div>
   <div class="featuredherbs">
     <h2>Featured Herbs</h2>

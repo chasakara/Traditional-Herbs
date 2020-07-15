@@ -8,7 +8,7 @@
 * { margin: 0;
     padding: 0;}
 
-body {background-color:rgb(187, 219, 171);}
+/*body {background-color:rgb(187, 219, 171);}*/
 
 /*---- Navbar ---*/
 
@@ -37,39 +37,44 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
              font-size: 105%;}
 
 .username { display: inline-block;
-            color: red;}             
+            color: red;}      
+
+.navbar-toggler-icon {background-color: gray;
+                      color: white;
+                      border-radius: 5px;}       
 
 /*---- Home Page ---*/
 
-.home-image {margin-top: 5px;}
+.home-image-container { position: relative;
+                        display: inline-block;
+                        height: 450px;}
 
-.home-image img { background-size: cover;
-                  background-repeat: no-repeat;
-                  width: 99.9vw;
-                  height: 450px;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto; }
+.home-image-img img { background-size: cover;
+                      background-repeat: no-repeat;
+                      width: 98.9vw;
+                      height: 450px;
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto; }
 
 .foreground-text { position: absolute;
-                   top: 40%;
+                   top: 50%;
                    left: 50%;
+                   height: auto;
+                 
                    background-color: rgba(0, 0, 0, 0.7);
-                   transform: translate(-50%, -50%);
+                   transform: translate(-60%, -50%);
                    color: white;
-                    width: inherit;
-                   padding: 9px;
-    
-}
+                   width: inherit;
+                   padding: 9px;}
 
-.featuredherbs {margin: 10px;
-                padding: 3px;}
+.featuredherbs { margin: 10px;
+                 padding: 3px;}
 
-.featuredherbs h2 {font-family: 'Piedra', cursive;
-                   }
+.featuredherbs h2 { font-family: 'Piedra', cursive;}
 
-.featured4herbs {border-top:1px solid limegreen;
-                 top:50%;}
+.featured4herbs { border-top:1px solid limegreen;
+                  top:50%;}
 
 /*---- My Herbs ---*/
 
@@ -79,45 +84,46 @@ h5 {text-align: center;
       padding: 0;
       margin: 0;}
 
-.rev {background-color: black;
-          color: white;}
+.rev { background-color: black;
+       color: white;}
 
-span{color: green;}
+span{ color: green;}
 
-.cu{color: black;
-    padding: 0;
-    margin: 0;
-    background-color: lightgreen;}
+.cu{ color: black;
+     padding: 0;
+     margin: 0;
+     background-color: lightgreen;}
 
-.card-body {padding: 0;}
+.card-body { padding: 0;}
 
-.card-title {margin: 0;}
+.card-title { margin: 0;}
 
-.card-title span a {background-color: green;
-                    color: white;
-                    font-size: 20px;
-                    width: 130px;}
+.card-title span a { background-color: green;
+                     color: white;
+                     font-size: 20px;
+                     width: 130px;}
 
-.card {margin: 10px;
-       border: 1px solid springgreen;
-       border-radius: 4px;}
+.card { margin: 10px;
+        border: 2px solid green;
+        border-radius: 4px;}
 
-.rev-display {display: inline-block;}
+.rev-display { display: inline-block;}
 
 /*---- All herbs Page Herbcards ---*/
 
-.allherbsBg {background-image: url("../herbsimages/allherbsbackground.jpg");       
-             background-repeat: no-repeat;
-             background-size: cover;
-             }
+.allherbsBg { background-image: url("../herbsimages/allherbsbackground.jpg");       
+              background-repeat: no-repeat;
+              background-size: cover;}
 
-.reviewblock  {display: flex;  
+.allherbstitle p { margin: 0 auto;}
+
+.reviewblock  { display: flex;  
                 justify-content: space-between;  }
 
-.review {padding: 4px;}
+.review { padding: 4px;}
 
-.plus {padding: 4px;
-      text-decoration: none;}
+.plus { padding: 4px;
+        text-decoration: none;}
 
 .reviewblock a:hover {font-size: 120%;}
 
@@ -208,8 +214,6 @@ span{color: green;}
             color:white;
             padding: 2px;
             border-radius: 6px;}
-
-.BackHome
 
 /*---- Add Herb ---*/
 

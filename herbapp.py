@@ -48,13 +48,23 @@ def all_herbs():
         (current_page - 1)*limit_per_page).limit(limit_per_page)
         return render_template("all_herbs.html",
                                session_name=session['username'],
-                               herbs=herbs,
+                               herbs=herbs, today=today,
                                title='All Herbs', current_page=current_page,
                                pages=pages,
                                number_of_all_rec=number_of_all_rec)
     # Puts the herbs in order Newest to oldest but with out the login username
+    limit_per_page = 8
+    current_page = int(request.args.get('current_page', 1))
+    # get total of all the herbs in db
+    herbs = mongo.db.herbs
+    number_of_all_rec = herbs.count()
+    pages = range(1, int(math.ceil(number_of_all_rec /
+                                   limit_per_page)) + 1)
+    herbs = herbs.find().sort('_id', -1).skip((current_page - 1)
+                                               *limit_per_page).limit(limit_per_page)
     return render_template("all_herbs.html", title='All Herbs',
-                           herbs=mongo.db.herbs.find().sort("_id", -1))
+                           current_page=current_page, pages=pages,
+                           number_of_all_rec=number_of_all_rec)
 
 
 @app.route('/my_herbs')
@@ -62,14 +72,15 @@ def my_herbs():
     session_name = session['username']
     return render_template("all_herbs.html",
                            session_name=session['username'],
-                           herbs=mongo.db.herbs.find({
-                               'username': session_name}), title="My Herbs")
+                           herbs=mongo.db.herbs.find(
+                            {'username': session_name}),
+                             title="My Herbs")
 
 
 @app.route('/herb/<herb_id>')
 def herb(herb_id):
     herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
-    #reviews = mongo.db.reviews.find({'_id': ObjectId(herb_id)})
+# reviews = mongo.db.reviews.find({'_id': ObjectId(herb_id)})
     if 'username' in session:
         return render_template('herb.html',
                                session_name=session['username'],
