@@ -169,11 +169,15 @@ span{ color: green;}
               margin-bottom: 67px;}
 
 .herbimage{ display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;}
+            margin: 11px auto;
+            height: 400px;
+            width: 75%;}
 
-.herbnamecure_Bg {background-color: limegreen;}
+.herbimage img {height: 400px;}
+
+.herbnamecure_Bg {background-color: limegreen;
+                    margin: 10px auto;
+width: 75%;}
 
 .herb_image_container {width: 90%;
                        margin: 5px auto;
@@ -182,12 +186,16 @@ span{ color: green;}
 
 .herbDescription {border: 1px solid limegreen;
                   padding: 7px;
+                  width: 75%;
+                  margin: 5px auto;
                   text-align: center;
                   background-color: lightgray;
                   border-radius: 7px;}
 
 .herbPreparation { border: 1px solid limegreen;
                   padding: 7px;
+                  width: 75%;
+                  margin: 5px auto;
                   text-align: center;
                   background-color: lightgray;
                   border-radius: 7px;}
@@ -196,6 +204,8 @@ span{ color: green;}
 
 .herbUsage { border: 1px solid limegreen;
              padding: 7px;
+             width: 75%;
+                  margin: 5px auto;
              text-align: center;
              background-color: lightgray;
              border-radius: 7px;}
@@ -224,6 +234,11 @@ span{ color: green;}
 /*---- Add Herb ---*/
 
 .addherbimagebackground {background-color: white; }
+
+.inputstyles { border-top:none;
+                border-bottom-color:black;
+                border-right:none;
+               border-left:none;}
 
 
 
