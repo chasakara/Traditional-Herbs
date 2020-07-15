@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 {% block content %}
-<div class="">
-	
+<div class="container-fluid">
+	<div class="yourherbs">
+		<h6> Your Herbs you have created </h6>
+	</div>
+	<div class="row">
+		{% for herb in herbs %}
+		{% include 'herbcards.html' %}
+		{% endfor %}
+	</div>
+	<!--Pagination-->
+	<div class="pagination-center">
+		<div class="pagination">
+			<ul class="button-pignation">
+				{% for page_num in pages %}
+				{% if page_num == current_page %}
+				<li class="active"><a>{{ page_num }}</a></li>
+				{% else %}
+				<li class="">
+					<a href="{{ url_for('my_herbs', current_page=page_num) }}">{{ page_num }}</a>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
 </div>
-
-{%  for herb in my_herbs %}
-{{ include "herbcards.html"}}
-{% endfor %}
-
 {% endblock %}

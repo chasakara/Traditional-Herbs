@@ -77,12 +77,18 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
                   top:50%;}
 
 /*---- My Herbs ---*/
+ 
+ .yourherbs { margin: 10px 0; }
+
+.yourherbs h6 { font-weight: bold;
+                font-size: 150%;
+                text-align: center;}
 
 .container-fluid {padding: 0;}
 
-h5 {text-align: center;
-      padding: 0;
-      margin: 0;}
+h5 { text-align: center;
+     padding: 0;
+     margin: 0;}
 
 .rev { background-color: black;
        color: white;}
@@ -145,8 +151,8 @@ span{ color: green;}
                       font-size: 18px;}
 
 .button-pignation a.active {  background-color:rgb(51, 138, 55);
-                                 color: white;
-                                 border: 3px dotted #4CAF50;}
+                              color: white;
+                              border: 3px dotted #4CAF50;}
 
 
 .button-pignation li a:hover { background-color: rgba(60, 97, 19, 0.719);
@@ -279,18 +285,21 @@ span{ color: green;}
 
 /*---- footer---*/
 
-.copyright {margin: 2px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;}
+.copyright { margin: 2px 0;
+             display: flex;
+             justify-content: center;
+             align-items: center;}
 
-.social-icon-copyright {margin: 5px 0;}
+.social-icon-copyright { margin: 5px 0;}
 
 .social-links { border-top: 10px solid limegreen;}
 
-.social-links-center {display: flex;
-                      justify-content: center;
-                      align-items: center;}
+.social-links-center { display: flex;
+                       justify-content: center;
+                       align-items: center;}
+
+.social-links-center a { text-decoration: none;
+                              }
 
 .fa-facebook {color: blue;}
 
