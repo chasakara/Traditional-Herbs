@@ -52,7 +52,7 @@
         </div>
          <div class="writenby">
          <h6> Writen by:  {{herb.username}} </h6> 
-          <h6> Date writen: {{herb.date_added}} </h6>
+          <h6> on {{herb.date_added}} </h6>
         </div>
     <div class="container">
         <div class="row justify-content-center ">
@@ -63,7 +63,9 @@
             <a href="{{url_for('add_review')}}" class="btn-sm Addreview ">Add review</a>
             <!--Sends you back to all_herbs-->
             {% else %}
+            <div class="addreviewdiv">
             <a href="{{ url_for('add_review' )}}" class="btn-sm Addreview">Add review</a>
+            </div>
             {% endif %}
         </div>
 	</div>

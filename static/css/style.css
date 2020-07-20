@@ -63,7 +63,7 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
                    height: auto;
                  
                    background-color: rgba(0, 0, 0, 0.7);
-                   transform: translate(-60%, -50%);
+                   transform: translate(-50%, -50%);
                    color: white;
                    width: inherit;
                    padding: 9px;}
@@ -210,7 +210,8 @@ width: 75%;}
              background-color: lightgray;
              border-radius: 7px;}
 
-.writenby h6 {display: inline;}
+.writenby h6 { display: inline;
+               font-size: 10px; }
 
 .datewriten {text-align: center;}
 
@@ -231,6 +232,10 @@ width: 75%;}
             padding: 2px;
             border-radius: 6px;}
 
+.Addreview a { text-decoration: none;}
+
+.addreviewdiv { margin: 55px 0; }
+
 /*---- Add Herb ---*/
 
 .addherbimagebackground {background-color: white; }
@@ -240,15 +245,9 @@ width: 75%;}
                 border-right:none;
                border-left:none;}
 
-
-
 /*---- Edit Herb ---*/       
 
-.names {font-family: }
-
 .edit_herb_container_color { width: 80 vw;}
-
-/*---- Log in Form ---*/
 
 /*---- Sign up Form ---*/
 
@@ -293,6 +292,14 @@ width: 75%;}
 .userreviewscontainer {border-radius: 5px;
                        padding: 5px;
                        background-color: gray;}
+
+.Addreviewbutton { text-decoration: none;
+                   background-color: blue;
+                   color: white;
+                   padding: 6px;
+                   border-radius: 5px; }
+
+.writereview { margin: 10px 0;}
 
 /*--- Card ---*/
 

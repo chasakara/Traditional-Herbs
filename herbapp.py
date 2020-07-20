@@ -237,56 +237,6 @@ def logout():
     return redirect(url_for('login'))
 
 
-# Account Settings
-@app.route("/account_settings/<username>")
-def account_settings(username):
-    '''
-    Account settings page - displays username,
-    buttons for change_username, change_password
-    and delete_account pages.
-    '''
-    users = mongo.db.users
-    print("TESTING SOMETHING")
-    print(users.find_one({'username': session['username']}))
-    # prevents guest users from viewing the page
-    if 'username' in session:
-        users = mongo.db.users
-    users.find_one({'username': session['username']})
-    return render_template('account_settings.html',
-                           username=username, title='Account Settings')
-
-
-# Delete Account
-@app.route("/delete_account/<username>", methods=['GET', 'POST'])
-def delete_account(username):
-    '''
-    DELETE.
-    Remove user's account from the database as well as all herbs
-    created by this user. Before deletion of the account, user is asked
-    to confirm it by entering password.
-    '''
-    # prevents guest users from viewing the form
-    if 'username' in session:
-        user = mongo.db.users.find_one({"name": username.capitalize()})
-        print("xxxxxx")
-        print("USERNAME", user)
-    # checks if password matches existing password in database
-
-        all_user_herbs = user.get("user_herbs")
-        for herb in all_user_herbs:
-            herbs = mongo.db.herbs
-            herbs.remove({"_id": herb})
-        # remove user from database,clear session and redirect to the home page
-        flash("Your account has been deleted.")
-        session.pop("username", None)
-        users = mongo.db.users
-        users.remove({"_id": user.get("_id")})
-        return redirect(url_for("index"))
-    else:
-        flash("Password is incorrect! Please try again")
-        return redirect(url_for("account_settings", username=username))
-
-
 @app.route('/all_reviews')
 def all_reviews():
     return render_template('all_reviews.html',
