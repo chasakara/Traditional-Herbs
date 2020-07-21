@@ -35,7 +35,7 @@
             <a class=" nav-link" title="Logout" href="{{url_for('logout')}}">Logout</a>
         </li>
         <div>
-            <h5>Greetings {{ session.username }}</h5>
+            <h5> {{ session.username }}</h5>
         </div>
             {% else %}
         <li> 

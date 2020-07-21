@@ -7,7 +7,7 @@ traditional herbs to cure some mild infections or mild pains
 
 #### As a user l want 
 
-* to know what each herb cures 
+*to know what each herb cures 
 
 * to know how to prepaire the herbs
 
