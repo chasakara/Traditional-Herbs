@@ -91,7 +91,7 @@ def my_herbs():
 
 @app.route('/herb/<herb_id>')
 def herb(herb_id):
-    herb=mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
+    herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
 # reviews = mongo.db.reviews.find({'_id': ObjectId(herb_id)})
     if 'username' in session:
         return render_template('herb.html',
@@ -108,7 +108,7 @@ def add_herb():
         if request.method == 'POST':
             herbs = mongo.db.herbs
             herbs.insert({
-                'username': session['username'],  #Now gets the username from session
+                'username': session['username'],
                 'herb_name': request.form.get('herb_name'),
                 'herb_cure': request.form.get('herb_cure'),
                 'herb_description': request.form.get('herb_description'),
@@ -249,7 +249,6 @@ def all_reviews():
 3. When displaying a herb, use reviews.find with "herb_id": herb_id to get all reviews that have that herb_id.`
 '''
  
-
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.info(f'Page not found: {request.url}')
@@ -260,6 +259,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
-
-
-
