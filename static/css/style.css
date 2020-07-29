@@ -176,8 +176,8 @@ span{ color: green;}
 .herbimage img {height: 400px;}
 
 .herbnamecure_Bg {background-color: limegreen;
-                    margin: 10px auto;
-width: 75%;}
+                  margin: 10px auto;  
+                  width: 75%;}
 
 .herb_image_container {width: 90%;
                        margin: 5px auto;
@@ -205,13 +205,15 @@ width: 75%;}
 .herbUsage { border: 1px solid limegreen;
              padding: 7px;
              width: 75%;
-                  margin: 5px auto;
+             margin: 5px auto;
              text-align: center;
              background-color: lightgray;
              border-radius: 7px;}
 
-.writenby h6 { display: inline;
-               font-size: 10px; }
+.writenby h6 { display: flex;
+               justify-content: center;
+               font-size: 12px; 
+               font-weight: bold;}
 
 .datewriten {text-align: center;}
 
@@ -234,7 +236,11 @@ width: 75%;}
 
 .Addreview a { text-decoration: none;}
 
-.addreviewdiv { margin: 55px 0; }
+.addreviewdiv { margin: 10px 0; }
+
+.justify-contnt-center { display: flex;
+                         justify-content: center;
+                         margin: 17px 0;}
 
 /*---- Add Herb ---*/
 
@@ -296,7 +302,9 @@ width: 75%;}
 .Addreviewbutton { text-decoration: none;
                    background-color: blue;
                    color: white;
-                   padding: 6px;
+                   display: flex;
+                   justify-content: center;
+                   padding: 5px;
                    border-radius: 5px; }
 
 .writereview { margin: 10px 0;}

@@ -76,7 +76,7 @@ def my_herbs():
 @app.route('/herb/<herb_id>')
 def herb(herb_id):
     herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
-# reviews = mongo.db.reviews.find({'_id': ObjectId(herb_id)})
+    reviews = mongo.db.reviews.find({'herb_id': ObjectId(herb_id)})
     if 'username' in session:
         return render_template('herb.html',
                                session_name=session['username'],
@@ -102,7 +102,7 @@ def add_herb():
                 'date_added': today_string,
                 'date_iso': today_iso})
             flash('Your Herb was successfully added')
-            return redirect(url_for('all_herbs'))
+            return redirect(url_for('my_herbs'))
         return render_template("add_herb.html",
                                session_name=session['username'])
     flash('You must be logged in to add a new herb')
@@ -146,26 +146,6 @@ def delete_herb(herb_id):
         flash('Sorry! You must be logged in first')
         return redirect(url_for('login'))
     flash('Sorry! You must be logged in first')
-    return redirect(url_for('login'))
-
-
-@app.route('/add_review', methods=['POST', 'GET'])
-def add_review():
-    today_string = datetime.datetime.now().strftime('%d/%m/%y')
-    today_iso = datetime.datetime.now()
-    if 'username' in session:
-        if request.method == 'POST':
-            reviews = mongo.db.reviews
-            reviews.insert({
-                'username': session['username'],
-                'your_review': request.form.get('your_review'),
-                'date_added': today_string,
-                'date_iso': today_iso})
-            flash('Your Review has been successfully added')
-            return redirect(url_for('all_reviews'))
-        return render_template("add_review.html",
-                               session_name=session['username'])
-    flash('You must be logged in to add a review')
     return redirect(url_for('login'))
 
 
@@ -221,15 +201,48 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/all_reviews')
-def all_reviews():
+@app.route('/add_review/<herb_id>', methods=['POST', 'GET'])
+def add_review(herb_id):
+    today_string = datetime.datetime.now().strftime('%d/%m/%y')
+    today_iso = datetime.datetime.now()
+    herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
+    if 'username' in session:
+        if request.method == 'POST':
+            reviews = mongo.db.reviews
+            reviews.insert({'_id': ObjectId(herb_id)},
+                {
+                'username': session['username'],
+                'your_review': request.form.get('your_review'),
+                'date_added': today_string,
+                'date_iso': today_iso})
+            flash('Your Review has been successfully added')
+            return redirect(url_for('all_reviews'))
+        return render_template("add_review.html", herb=herb,
+                               session_name=session['username'])
+    flash('You must be logged in to add a review')
+    return redirect(url_for('login'))
+
+
+@app.route('/all_reviews/<review_id>')
+def all_reviews(review_id):
+    review = mongo.db.reviews.find( {'_id': ObjectId(review_id)} ).sort("_id", -1)
     return render_template('all_reviews.html',
-                           reviews=mongo.db.reviews.find().sort("_id", -1))
+                            review=review)
+                           
+
+
+@app.route('/searchbar',  methods=['POST', 'GET'])
+def searchbar():
+    if request.method == 'POST':
+        request.form.find['query']
+    return render_template('searchbar.html',
+                           searches=mongo.db.herbs.find
+                           ({'$text': {'$search': 'query'}}))
 
 
 '''
 1. Grab the herb._id and pass it into your addreview route.
-2. Modify the add_review route so that it expects a herb_id, and so that when s review is added, it also adds a review.herb_id field into the database.
+2. Modify the add_review route so that it expects a herb_id, and so that when s review is added, it also adds a           review.herb_id field into the database.
 3. When displaying a herb, use reviews.find with "herb_id": herb_id to get all reviews that have that herb_id.`
 '''
  

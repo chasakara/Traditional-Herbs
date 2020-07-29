@@ -3,28 +3,24 @@
 {% block content %}
 <div class="container-fluid">
 	<div class="container">
-
 		<div class="container usersreviews">
-			<div class="usersheading"> 
-            <h5> Users reviews </h5>
-            </div>
-			
+			<div class="usersheading">
+				<h5> Users reviews </h5>
+			</div>
 			<div class="usersreviewdiv">
-            {% for review in reviews %}
+				{% for review in reviews %}
 				<div class="usersreviewsdivider">
 					<div class="userreviewscontainer">
 						<p> Posted by:{{review.username}} on {{review.date_added}} </p>
 						{{ review.your_review }}
 					</div>
 				</div>
-                {% endfor %}
+				{% endfor %}
 			</div>
-			
-
 		</div>
-        <div class="addreviewbutton">
-		<a href="{{ url_for('add_review') }}" class="btn-sm Addreview"> Add review </a>
-        </div>
+		<div class="addreviewbutton">
+			<a href="{{ url_for('add_review') }}" class="btn-sm Addreview"> Add review </a>
+		</div>
 	</div>
 </div>
 {% endblock %}
