@@ -4,7 +4,7 @@
 
 <div class="container">
    <div>
-     <form action="{{ url_for('add_review') }}" method="POST">
+     <form action="{{ url_for('add_review', herb_id=herb._id) }}" method="POST">
       <div class="form-group">
         <label for="your_review"><div class="writereview"><h5>Write your review if you have used the herb</h5></div></label>
         <textarea id="your_review" class="form-control" name="your_review" required>

@@ -76,7 +76,7 @@ def my_herbs():
 @app.route('/herb/<herb_id>')
 def herb(herb_id):
     herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
-    reviews = mongo.db.reviews.find({'herb_id': ObjectId(herb_id)})
+    # reviews = mongo.db.reviews.find({'herb_id': ObjectId(herb_id)})
     if 'username' in session:
         return render_template('herb.html',
                                session_name=session['username'],
@@ -210,28 +210,29 @@ def add_review(herb_id):
         if request.method == 'POST':
             reviews = mongo.db.reviews
             reviews.insert({'_id': ObjectId(herb_id)},
-                {
+               {
                 'username': session['username'],
                 'your_review': request.form.get('your_review'),
                 'date_added': today_string,
                 'date_iso': today_iso})
             flash('Your Review has been successfully added')
-            return redirect(url_for('all_reviews'))
+            return redirect(url_for('herb_reviews'))
         return render_template("add_review.html", herb=herb,
                                session_name=session['username'])
     flash('You must be logged in to add a review')
     return redirect(url_for('login'))
 
 
-@app.route('/all_reviews/<review_id>')
-def all_reviews(review_id):
-    review = mongo.db.reviews.find( {'_id': ObjectId(review_id)} ).sort("_id", -1)
-    return render_template('all_reviews.html',
-                            review=review)
-                           
+@app.route('/herb_reviews')
+def herb_reviews():
+    reviews = mongo.db.reviews
+    review = mongo.db.reviews
+    reviews = mongo.db.reviews.find().sort("_id", -1)
+    return render_template('herb_reviews.html',
+                           reviews=reviews, review=review)
 
 
-@app.route('/searchbar',  methods=['POST', 'GET'])
+@app.route('/searchbar', methods=['POST', 'GET'])
 def searchbar():
     if request.method == 'POST':
         request.form.find['query']
@@ -249,7 +250,7 @@ def searchbar():
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.info(f'Page not found: {request.url}')
-    return render_template('errors/404.html', error=error)
+    return render_template('404.html', error=error)
 
 
 if __name__ == "__main__":

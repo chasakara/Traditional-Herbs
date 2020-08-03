@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	<div>
+		{% for review in reviews %}
+		<div class="usersreviewsdivider">
+			<div class="userreviewscontainer">
+				<p> Posted by:{{review.username}} on {{review.date_added}} </p>
+				{{ review.your_review }}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

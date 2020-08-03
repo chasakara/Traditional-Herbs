@@ -23,7 +23,7 @@
 				<div class="herbDescription">
 					<div>
 						<div>
-							<h5> Herb description </h5>
+							<h5> <u class="underline">Herb description</u> </h5>
 						</div>
 						<div>
 							{{ herb.herb_description}}
@@ -81,11 +81,11 @@
 								</div>
 							</div>
 						</div>
-						<a href="{{url_for('add_review')}}" class="btn-sm Addreview ">Add review</a>
+						<a href="{{url_for('add_review', herb_id=herb._id)}}" class="btn-sm Addreview ">Add review</a>
 						<!--Sends you back to all_herbs-->
 						{% else %}
 						<div class="addreviewdiv">
-							<a href="{{ url_for('add_review' )}}" class="btn-sm Addreview">Add review</a>
+							<a href="{{ url_for('add_review', herb_id=herb._id )}}" class="btn-sm Addreview">Add review</a>
 						</div>
 						{% endif %}
 					</div>
