@@ -40,8 +40,8 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
 .username { display: inline-block;
             color: red;}      
 
-.navbar-toggler-icon {background-color: gray;
-                      color: white;
+.navbar-toggler-icon {background-color:gray;
+                       
                       border-radius: 5px;}       
 
 /*---- Home Page ---*/
@@ -373,4 +373,10 @@ textarea:focus {
 .herbUsage { width: 99.9%;}
 
 }
-    
+
+@media only screen and (max-device-width:400px) {
+
+.foreground-text { width: auto;
+                   height:250px;}
+
+}
