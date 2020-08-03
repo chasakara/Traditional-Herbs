@@ -220,28 +220,27 @@ span{ color: green;}
 
 .DeleteHerb {background-color: red;
              color: white;
-             padding: 2px;
              margin: 0 10px;
              border-radius: 6px;}
 
 .EditHerb { background-color: green;
             color: white;
-            padding: 2px;
+            
             border-radius: 6px;}
 
 .Addreview {text-decoration: none;
             background-color: blue;
             color:white;
-            padding: 2px;
+            
             border-radius: 6px;}
 
 .Addreview a { text-decoration: none;}
 
 .addreviewdiv { margin: 10px 0; }
 
-.justify-contnt-center { display: flex;
-                         justify-content: center;
-                         margin: 17px 0;}
+.editDeleteAddreviewButtons { display: flex;
+                              justify-content: space-evenly;
+                              margin: 17px 0;}
 
 /*---- Add Herb ---*/
 
@@ -290,11 +289,18 @@ textarea:focus {
 .already {margin:3px 0;}
 
 
-/*.formAd { margin-top: 44px;}
+/*-- Add Review Page --*/
+
+.submitReview {margin: 5px;}
+
+.submitReviewbutton { background-color: green;
+                      color:white;
+                      width:70px;
+                      height: 38px; }
 
 
 
-/*--- User Reviews ----*/
+/*--- User Reviews ----*/   
 
 .usersreviews {background-color: white;
                margin: 15px 0 ;}
@@ -371,12 +377,5 @@ textarea:focus {
 .herbPreparation { width: 99.9%;}
 
 .herbUsage { width: 99.9%;}
-
-}
-
-@media only screen and (max-device-width:400px) {
-
-.foreground-text { width: auto;
-                   height:250px;}
 
 }

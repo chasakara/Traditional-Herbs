@@ -201,20 +201,19 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/add_review/<herb_id>', methods=['POST', 'GET'])
-def add_review(herb_id):
+@app.route('/add_review', methods=['POST', 'GET'])
+def add_review():
     today_string = datetime.datetime.now().strftime('%d/%m/%y')
     today_iso = datetime.datetime.now()
     herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
     if 'username' in session:
         if request.method == 'POST':
             reviews = mongo.db.reviews
-            reviews.insert({'_id': ObjectId(herb_id)},
-               {
-                'username': session['username'],
-                'your_review': request.form.get('your_review'),
-                'date_added': today_string,
-                'date_iso': today_iso})
+            reviews.insert({'username': session['username'],
+                            'your_review': request.form.get('your_review'),
+                            'date_added': today_string,
+                            'date_iso': today_iso,
+                            'id': reviewherb_id})
             flash('Your Review has been successfully added')
             return redirect(url_for('herb_reviews'))
         return render_template("add_review.html", herb=herb,
@@ -232,13 +231,6 @@ def herb_reviews():
                            reviews=reviews, review=review)
 
 
-@app.route('/searchbar', methods=['POST', 'GET'])
-def searchbar():
-    if request.method == 'POST':
-        request.form.find['query']
-    return render_template('searchbar.html',
-                           searches=mongo.db.herbs.find
-                           ({'$text': {'$search': 'query'}}))
 
 
 '''

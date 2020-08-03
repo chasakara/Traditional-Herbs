@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 {% block content %}
-
 <div class="container">
-   <div>
-     <form action="{{ url_for('add_review', herb_id=herb._id) }}" method="POST">
-      <div class="form-group">
-        <label for="your_review"><div class="writereview"><h5>Write your review if you have used the herb</h5></div></label>
-        <textarea id="your_review" class="form-control" name="your_review" required>
-        </textarea>
-     </div>
-     <div>
-      <button type="submit" class="btn-sm Addreviewbutton">Add</button>
-     </div>
-    </form>
-   </div>
+	<div>
+		<form action="{{ url_for('add_review', herb_id=herb._id) }}" method="POST">
+			<div class="form-group">
+				<label for="your_review" class="herbHeadings">  Herb Review </label><br>
+				<textarea id="your_review" class="inputstyles form-control" placeholder="Write your review about the herb here" name="your_review" required></textarea>
+			</div>
+			<div class="submitReview">
+				<button type="submit" class="btn-sm submitReviewbutton">Add</button>
+			</div>
+		</form>
+	</div>
 </div>
-
 {% endblock %}
