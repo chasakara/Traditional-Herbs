@@ -79,11 +79,11 @@
 								</div>
 							</div>
 						</div>
-						<a href="{{url_for('add_review', herb_id=herb._id)}}" class="btn-sm Addreview ">Add review</a>
+						<a href="{{url_for('add_review', herb_id=herb._id)}}" class="btn btn-primary Addreview ">Add review</a>
 						<!--Sends you back to all_herbs-->
 						{% else %}
 						<div class="addreviewdiv">
-							<a href="{{ url_for('add_review', herb_id=herb._id )}}" class="btn-sm Addreview">Add review</a>
+							<a href="{{ url_for('add_review', herb_id=herb._id )}}" class="btn btn-primary Addreview">Add review</a>
 						</div>
 						{% endif %}
 					</div>

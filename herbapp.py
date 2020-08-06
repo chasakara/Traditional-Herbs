@@ -205,15 +205,15 @@ def logout():
 def add_review():
     today_string = datetime.datetime.now().strftime('%d/%m/%y')
     today_iso = datetime.datetime.now()
-    herb = mongo.db.herbs.find_one({'_id': ObjectId(herb_id)})
+    herb = mongo.db.herbs.find_one()
     if 'username' in session:
         if request.method == 'POST':
             reviews = mongo.db.reviews
             reviews.insert({'username': session['username'],
                             'your_review': request.form.get('your_review'),
                             'date_added': today_string,
-                            'date_iso': today_iso,
-                            'id': reviewherb_id})
+                            'date_iso': today_iso
+                            })
             flash('Your Review has been successfully added')
             return redirect(url_for('herb_reviews'))
         return render_template("add_review.html", herb=herb,
@@ -226,7 +226,7 @@ def add_review():
 def herb_reviews():
     reviews = mongo.db.reviews
     review = mongo.db.reviews
-    reviews = mongo.db.reviews.find().sort("_id", -1)
+    reviews = mongo.db.reviews.find()
     return render_template('herb_reviews.html',
                            reviews=reviews, review=review)
 
