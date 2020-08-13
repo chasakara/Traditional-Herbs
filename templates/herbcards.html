@@ -17,8 +17,8 @@
       <h5 class="card-title cu">{{ herb.herb_cure }}</h5>
     </div>
     <div class="reviewblock">
-      <div><a href="{{ url_for('herb_reviews') }} " class="review"> Reviews </a></div>
-      <div><a href=" {{ url_for('add_review') }}" class="plus"> + </a></div>
+      <div><a href="{{ url_for('herb_reviews', herb_id=herb._id) }} " class="review"> Reviews </a></div>
+      <div><a href=" {{ url_for('add_review', herb_id=herb._id ) }}" class="plus"> + </a></div>
     </div>
 </div>
 </div>

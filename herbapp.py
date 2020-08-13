@@ -201,32 +201,34 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/add_review', methods=['POST', 'GET'])
-def add_review():
+@app.route('/add_review/<herb_id>', methods=['POST', 'GET'])
+def add_review(herb_id):
     today_string = datetime.datetime.now().strftime('%d/%m/%y')
     today_iso = datetime.datetime.now()
-    herb = mongo.db.herbs.find_one()
+    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id) })
     if 'username' in session:
         if request.method == 'POST':
             reviews = mongo.db.reviews
             reviews.insert({'username': session['username'],
                             'your_review': request.form.get('your_review'),
                             'date_added': today_string,
-                            'date_iso': today_iso
+                            'date_iso': today_iso,
+                            'herb': herb['herb_name']
                             })
             flash('Your Review has been successfully added')
-            return redirect(url_for('herb_reviews'))
+            return redirect(url_for('herb_reviews', herb_id=herb['_id']))
         return render_template("add_review.html", herb=herb,
                                session_name=session['username'])
     flash('You must be logged in to add a review')
     return redirect(url_for('login'))
 
 
-@app.route('/herb_reviews')
-def herb_reviews():
+@app.route('/herb_reviews/<herb_id>')
+def herb_reviews(herb_id):
+    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id) })
     reviews = mongo.db.reviews
     review = mongo.db.reviews
-    reviews = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find({'herb': herb['herb_name']})
     return render_template('herb_reviews.html',
                            reviews=reviews, review=review)
 
