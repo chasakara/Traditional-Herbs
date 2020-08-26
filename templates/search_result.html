@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% block content %}
-
 <!-- if statement added to display search result heading only when search function is used -->
 {% if search %}
 <h2 class="balsamiq">Search Result:</h2>
-{% endif %}
-<!-- Tim from tutour support help to improve & re-write this code -->
-{% if herbs.count() > 0 %}
+{% endif %} {% if herbs.count() > 0 %}
 <!-- 'herb' variable has some results -->
 <div class="row">
-    {% for herb in herbs %}
-   <div class="col-md-4 col-lg-3 col-sm-12">
-<div class="card cardadjustment heightcard">
-<a href="{{ url_for('herb', herb_id=herb._id) }}"> 
-  {% if herb.herb_image %}
-    <img src="{{herb.herb_image}}" class="herb_image card-img-top  img-thumbnail  img-fluid" alt="{{herb.herb_name}}">
-  {% else %}
-    <img src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
-            class="herb_image card-img-top img-thumbnail   img-fluid " alt="No Herb image available" />
-  {% endif %}      
-</a>
-  <div class="card-body">
-    <div class="cu">
-      <h5 class="card-title">{{ herb.herb_name }}</h5>
+  {% for herb in herbs %}
+  <div class="col-md-4 col-lg-3 col-sm-12">
+    <div class="card cardadjustment heightcard">
+      <a href="{{ url_for('herb', herb_id=herb._id) }}">
+        {% if herb.herb_image %}
+        <img
+          src="{{herb.herb_image}}"
+          class="herb_image card-img-top img-thumbnail img-fluid"
+          alt="{{herb.herb_name}}"
+        />
+        {% else %}
+        <img
+          src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
+          class="herb_image card-img-top img-thumbnail img-fluid"
+          alt="No Herb image available"
+        />
+        {% endif %}
+      </a>
+      <div class="card-body">
+        <div class="cu">
+          <h5 class="card-title">{{ herb.herb_name }}</h5>
+        </div>
+        <div>
+          <h5 class="card-title cu">{{ herb.herb_cure }}</h5>
+        </div>
+        <div class="reviewblock">
+          <div>
+            <a
+              href="{{ url_for('herb_reviews', herb_id=herb._id) }} "
+              class="review"
+            >
+              Reviews
+            </a>
+          </div>
+          <div>
+            <a
+              href=" {{ url_for('add_review', herb_id=herb._id ) }}"
+              class="plus"
+            >
+              +
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-      <h5 class="card-title cu">{{ herb.herb_cure }}</h5>
-    </div>
-    <div class="reviewblock">
-      <div><a href="{{ url_for('herb_reviews', herb_id=herb._id) }} " class="review"> Reviews </a></div>
-      <div><a href=" {{ url_for('add_review', herb_id=herb._id ) }}" class="plus"> + </a></div>
-    </div>
-</div>
-</div>
-</div>
-    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 {% else %}
 <!-- no results in 'herb' variable -->
-<h4 class="balsamiq center-align no-result">No Herb Found</h4>
-<!--if statement added to display the add herb button and the text if user in session has no herb added and click on my herbs-->
-{% if 'username' in session and my_herbs %}
-<div class="row">
-    <div class="col-sm-12">
-    <h5 class="balsamiq">Please add a herb to share with us!</h5>
-        <a href="{{url_for('add_herb')}}" class="waves-effect waves-light btn balsamiq">Add Herb<i class="material-icons right">playlist_add</i></a>
-    </div>
+<div class="no-result">
+  Your search -<strong>{{ search_herb }}</strong>- did not match any
+  documents.<br />
+  Suggestions:
+  <ul>
+    <li>Make sure that all words are spelled correctly.</li>
+    <li>Try different keywords.</li>
+    <li>Try more general keywords.</li>
+  </ul>
 </div>
-{% endif %} {% endif %} {% endblock %}
-
+<!--if statement added to display the add herb button and the text if user in session has no herb added and click on my herbs-->
+{% endif %} {% endblock %}

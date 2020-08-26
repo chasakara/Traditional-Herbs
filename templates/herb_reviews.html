@@ -19,7 +19,14 @@
 				{{ review.your_review }}
 			</div>
 		</div>
-		{% endfor %}
+        {% if session_name == herb.username %}
+        	<div class="addreviewdiv">
+							<a href="{{ url_for('add_review', herb_id=herb._id )}}" class="btn btn-primary Addreview">Add review</a>
+						</div>
+        	{% else %}
+            {% endif %}
+</div>
+		{% endfor %}	
 	</div>
 </div>
 {% endblock %}

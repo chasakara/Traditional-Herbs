@@ -75,7 +75,20 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
 .featuredherbs h2 { font-family: 'Piedra', cursive;}
 
 .featured4herbs { border-top:1px solid limegreen;
+                  border-bottom: 5px;
                   top:50%;}
+
+.search_form {display: flex;
+              justify-content: center;  }
+
+.search_form button { background-color: whitesmoke;
+                      color: black;
+                      }
+
+.no-result { margin: auto;
+             width: 50%;
+             border: 3px solid green;
+             padding: 10px; }
 
 /*---- My Herbs ---*/
  
