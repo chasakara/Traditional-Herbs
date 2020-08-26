@@ -13,6 +13,21 @@
          of  the shelves drugs.</p> 
     </div> 
   </div>
+  <div class="">
+	<form method="POST" action="{{ url_for('searchbar') }}">
+  <!-- input -->
+  <div class="input-field">
+    <label for="search_herb">Search</label>
+    <input id="search_herb" type="text" name="search_herb" required />
+    <label class="label-icon" for="search_herb">Search</label>
+  </div>
+  <!-- Search button -->
+  <button class="" type="submit" name="action">
+    Find
+    <i class="material-icons left">search</i>
+  </button>
+</form>
+  </div>
   <div class="featuredherbs">
     <h2>Featured Herbs</h2>
   </div>

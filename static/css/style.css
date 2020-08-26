@@ -389,7 +389,7 @@ input[type=text]:focus {
 }
 
 .inputstyles { border-top:none;
-                border-bottom-color:black;
+               border-bottom-color:black;
                 border-right:none;
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;

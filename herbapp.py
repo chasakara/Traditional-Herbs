@@ -96,8 +96,8 @@ def add_herb():
                 'herb_name': request.form.get('herb_name'),
                 'herb_cure': request.form.get('herb_cure'),
                 'herb_description': request.form.get('herb_description'),
-                'herb_preparation': request.form.get('herb_preparation').splitlines(),
-                'herb_usage': request.form.get('herb_usage').splitlines(),
+                'herb_preparation': request.form.get('herb_preparation'),
+                'herb_usage': request.form.get('herb_usage'),
                 'herb_image': request.form.get('herb_image'),
                 'date_added': today_string,
                 'date_iso': today_iso})
@@ -117,16 +117,16 @@ def edit_herb(herb_id):
             if request.method == 'POST':
                 herbs = mongo.db.herbs
                 herbs.update({'_id': ObjectId(herb_id)},
-                               {'username': request.form.get('username'),
-                                'herb_name': request.form.get('herb_name'),
-                                'herb_cure': request.form.get('herb_cure'),
-                                'herb_description': request.form.get('herb_description'),
-                                'herb_preparation': request.form.get('herb_preparation'),
-                                'herb_usage': request.form.get('herb_usage'),
-                                'herb_image': request.form.get('herb_image'),
-                                'your_review': request.form.get('your_review'),
-                                'date_added': request.form.get('date_added'),
-                                'update_iso': datetime.datetime.now()})
+                             {'username': request.form.get('username'),
+                              'herb_name': request.form.get('herb_name'),
+                              'herb_cure': request.form.get('herb_cure'),
+                              'herb_description': request.form.get('herb_description'),
+                              'herb_preparation': request.form.get('herb_preparation'),
+                              'herb_usage': request.form.get('herb_usage'),
+                              'herb_image': request.form.get('herb_image'),
+                              'your_review': request.form.get('your_review'),
+                              'date_added': request.form.get('date_added'),
+                              'update_iso': datetime.datetime.now()})
                 flash(' You have Successfully Updated Your Herb', 'success')
                 return redirect(url_for('my_herbs', herb=herb))
             return render_template('edit_herb.html',
@@ -205,7 +205,7 @@ def logout():
 def add_review(herb_id):
     today_string = datetime.datetime.now().strftime('%d/%m/%y')
     today_iso = datetime.datetime.now()
-    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id) })
+    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id)})
     if 'username' in session:
         if request.method == 'POST':
             reviews = mongo.db.reviews
@@ -225,22 +225,27 @@ def add_review(herb_id):
 
 @app.route('/herb_reviews/<herb_id>')
 def herb_reviews(herb_id):
-    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id) })
+    herb = mongo.db.herbs.find_one({"_id": ObjectId(herb_id)})
     reviews = mongo.db.reviews
     review = mongo.db.reviews
     reviews = mongo.db.reviews.find({'herb': herb['herb_name']})
-    return render_template('herb_reviews.html',
+    return render_template('herb_reviews.html', herb=herb,
                            reviews=reviews, review=review)
 
 
+@app.route('/searchbar', methods=['POST'])
+def searchbar():
+    search_herb = request.form.get("search_herb")
+    #  create the index
+    mongo.db.herb.create_index([("$**", 'text')])
+    mongo.db.herbs.create_index([("$**", 'text')])
+    # search with the search word that came through the form
+    herb = mongo.db.herb.find({"$text": {"$search": search_herb}})
+    herbs = mongo.db.herbs.find({"$text": {"$search": search_herb}})
+    return render_template('search_result.html',
+                           herb=herb, herbs=herbs, search=True)
 
 
-'''
-1. Grab the herb._id and pass it into your addreview route.
-2. Modify the add_review route so that it expects a herb_id, and so that when s review is added, it also adds a           review.herb_id field into the database.
-3. When displaying a herb, use reviews.find with "herb_id": herb_id to get all reviews that have that herb_id.`
-'''
- 
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.info(f'Page not found: {request.url}')

@@ -14,32 +14,32 @@
             </div>
             <div class="form-group">
                 <label for="herb_name" class="herbHeadings"> <i class="fab fa-pagelines"></i>&nbsp;Herb Name</label>
-                <input type="text" class="form-control inputstyles names" id="herb_name" name="herb_name" value="{{herb.herb_name}}">
+                <input type="text" required class="form-control inputstyles names" id="herb_name" name="herb_name" value="{{herb.herb_name}}">
             </div>
             <div class="form-group">
                 <label for="herb_cure" class="herbHeadings"> <i class="fas fa-prescription-bottle-alt"></i>&nbsp;Herb Cure</label>
-                <input type="text" class="form-control inputstyles names" id="herb_cure" name="herb_cure" value="{{herb.herb_cure}}">
+                <input type="text" required class="form-control inputstyles names" id="herb_cure" name="herb_cure" value="{{herb.herb_cure}}">
             </div>
              <div class="form-group">
                 <label for="herb_image_uploader" class="herbHeadings"> <i class="fas fa-globe"></i>&nbsp;Herb Image URL</label>
-                <input type="text" class="form-control" name="herb_image" id="herb_image_uploader"
+                <input type="text" required class="form-control" name="herb_image" id="herb_image_uploader"
                     value="{{herb.herb_image}}" title="Right Click:'Copy Image Location'">
             </div>
             <div class="form-group">
                 <label for="herb_description" class="herbHeadings"><i class="fas fa-scroll"></i>&nbsp;Herb Descrition:</label>
-                <textarea class="form-control inputstyles ckeditor names" id="herb_description" name="herb_description">
+                <textarea required class="form-control inputstyles ckeditor names" id="herb_description" name="herb_description">
                     {{herb.herb_description}}
                 </textarea>
             </div>
             <div class="form-group">
-                <label for="herb_preparation" class="herbHeadings"> <i class="fas fa-mortar-pestle"></i>&nbsp;Herb Preparation</label>
+                <label for="herb_preparation" required class="herbHeadings"> <i class="fas fa-mortar-pestle"></i>&nbsp;Herb Preparation</label>
                 <textarea class="form-control inputstyles ckeditor names" id="herb_preparation" name="herb_preparation" >
                 {{herb.herb_preparation}}
                 </textarea>
             </div>
              <div class="form-group">
                 <label for="herb_usage">&nbsp;Herb Usage</label>
-                <textarea class="form-control inputstyles ckeditor names" id="herb_usage" name="herb_usage" >
+                <textarea required class="form-control inputstyles ckeditor names" id="herb_usage" name="herb_usage" >
                 {{herb.herb_usage}}
                 </textarea>
             </div>
