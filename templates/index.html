@@ -2,32 +2,107 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container-fluid">
   <div class="home-image-container">
-    <div class="home-image-img">
-      <img
-        src="{{ url_for('static', filename='herbsimages/herbindex.jpg') }}"
-        alt="sting"
-        class="img-fluid"
-      />
-    </div>
-    <div class="foreground-text">
-      <p>
-        Tradition herbs have been years used for many centuries and have shown
-        how effective they are in curing and heling aganist some diseases and
-        even easing the some mild pain. They are many traditionlal herbs which
-        have been well proven to work well and they can be an alternative if you
-        cannot afford some of the shelves drugs.
-      </p>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleCaptions"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active home-image-img">
+          <img
+            src="{{ url_for('static', filename='herbsimages/herbindex.jpg') }}"
+            alt="sting"
+            class="img-fluid"
+          />
+          <div class="carousel-caption">
+            <p>
+              Tradition herbs have been years used for many centuries and have
+              shown how effective they are in curing and heling aganist some
+              diseases and even easing the some mild pain. They are many
+              traditionlal herbs which have been well proven to work well and
+              they can be an alternative if you cannot afford some of the
+              shelves drugs.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item home-image-img">
+          <img
+            src="{{ url_for('static', filename='herbsimages/caro1.jpg') }}"
+            alt="sting"
+            class="img-fluid"
+          />
+          <div class="carousel-caption">
+            <p>
+              The major use of herbal medicines is for health promotion and
+              therapy for chronic, as opposed to life-threatening, conditions.
+              However, usage of traditional remedies increases when conventional
+              medicine is ineffective in the treatment of disease, such as in
+              advanced cancer and in the face of new infectious diseases
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item home-image-img">
+          <img
+            src="{{ url_for('static', filename='herbsimages/caro2.jpg') }}"
+            alt="sting"
+            class="img-fluid"
+          />
+          <div class="carousel-caption">
+            <p>
+              Aloe Vera gel has cooling properties and is anti-inflammatory.
+              Hence, it is one of the most natural remedies for sunburn or burnt
+              skin. Applying this gel helps with a protective layer for the
+              skin, and it also helps to retain moisture. It is rich in
+              antioxidants and minerals that boost the healing process.
+            </p>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleCaptions"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
   <div class="search_form">
     <form method="POST" action="{{ url_for('searchbar') }}">
       <!-- input -->
       <div class="input-field">
-        <input id="search_herb" type="text" name="search_herb" minlength="3" required placeholder="search the herb name or cure here">
-          <!-- Search button -->
-      <button class="" type="submit" name="action">
-        Search
-      </button>
+        <input
+          id="search_herb"
+          type="text"
+          name="search_herb"
+          minlength="3"
+          required
+          placeholder="search the herb name or cure here"
+        />
+        <!-- Search button -->
+        <button class="" type="submit" name="action">
+          Search
+        </button>
       </div>
     </form>
   </div>

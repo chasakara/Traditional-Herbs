@@ -46,28 +46,18 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
 
 /*---- Home Page ---*/
 
-.home-image-container { position: relative;
-                        display: inline-block;
-                        height: 450px;}
+.home-image-container { height: 450px;}
 
 .home-image-img img { background-size: cover;
                       background-repeat: no-repeat;
                       width: 98.9vw;
                       height: 450px;
-                      display: block;
-                      margin-left: auto;
-                      margin-right: auto; }
-
-.foreground-text { position: absolute;
-                   top: 50%;
-                   left: 50%;
-                   height: auto;
-                 
-                   background-color: rgba(0, 0, 0, 0.7);
-                   transform: translate(-50%, -50%);
-                   color: white;
-                   width: inherit;
-                   padding: 9px;}
+                    }
+ 
+.carousel-caption { background-color: rgba(0, 0, 0, 0.6);
+                    color: white;
+                    padding: 7px;
+                  }
 
 .featuredherbs { margin: 10px;
                  padding: 3px;}
@@ -311,8 +301,6 @@ textarea:focus {
                       width:70px;
                       height: 38px; }
 
-
-
 /*--- User Reviews ----*/   
 
 .usersreviews {background-color: white;
@@ -339,7 +327,9 @@ textarea:focus {
 
 .writereview { margin: 10px 0;}
 
-/*--- Card ---*/
+/*--- Search result page ---*/
+
+.balsamiq { margin-left: 7px;}
 
 
 
@@ -379,7 +369,7 @@ textarea:focus {
 .addHerb { margin-bottom: 10px;
            margin-top:5px;}
 
-@media only screen and (max-device-width:400px) {
+@media only screen and (max-device-width:450px) {
 
 .herbnamecure_Bg { width: 99.9%;}
 
@@ -393,7 +383,7 @@ textarea:focus {
 
 }
 
-@media only screen and (max-device-width:400px) {
+@media only screen and (max-device-width:450px) {
 
 .ccccccc { width: 95%;}
 

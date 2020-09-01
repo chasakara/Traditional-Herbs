@@ -1,5 +1,6 @@
 import os
-from flask import Flask, redirect, render_template, flash, url_for, request, session, abort
+from flask import Flask, redirect, render_template
+from flask import flash, url_for, request, session
 from flask_pymongo import PyMongo
 from flask_ckeditor import CKEditor
 from bson.objectid import ObjectId
@@ -42,29 +43,29 @@ def all_herbs():
     herbs = mongo.db.herbs
     number_of_your_herbs = herbs.count()
     pages = range(1, int(math.ceil(number_of_your_herbs /
-                                    limit_per_page)) + 1)
+                                   limit_per_page)) + 1)
     herbs = herbs.find().sort('_id', -1).skip((current_page - 1) *
-                                                limit_per_page).limit(limit_per_page)
+                                              limit_per_page).limit(limit_per_page)
     return render_template("all_herbs.html",
-                            herbs=herbs, today=today,
-                            title='All Herbs', current_page=current_page,
-                            pages=pages,
-                            number_of_your_herbs=number_of_your_herbs)
-    
+                           herbs=herbs, today=today,
+                           title='All Herbs', current_page=current_page,
+                           pages=pages,
+                           number_of_your_herbs=number_of_your_herbs)
+
 
 @app.route('/my_herbs')
 def my_herbs():
     session_name = session['username']
-# Puts the herbs in order newest to oldest 
+# Puts the herbs in order newest to oldest
     limit_per_page = 8
     current_page = int(request.args.get('current_page', 1))
-# get total of all the herbs in db
+# get total of user's the herbs in db
     herbs = mongo.db.herbs
     number_of_your_herbs = herbs.count()
     pages = range(1, int(math.ceil(number_of_your_herbs /
                                    limit_per_page)) + 1)
     herbs = herbs.find().sort('_id', -1).skip((current_page - 1) *
-                                               limit_per_page).limit(limit_per_page)
+                                                limit_per_page).limit(limit_per_page)
     return render_template("my_herbs.html", title="My Herbs",
                            session_name=session['username'],
                            herbs=mongo.db.herbs.find(
