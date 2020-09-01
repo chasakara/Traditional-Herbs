@@ -5,6 +5,25 @@
 	<div class="yourherbs">
 		<h6>{{ title }} </h6>
 	</div>
+      <div class="search_form">
+    <form method="POST" action="{{ url_for('searchbar') }}">
+      <!-- input -->
+      <div class="input-field">
+        <input
+          id="search_herb"
+          type="text"
+          name="search_herb"
+          minlength="3"
+          required
+          placeholder="search the herb name or cure here"
+        />
+        <!-- Search button -->
+        <button class="" type="submit" name="action">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
 	<!--Cycles through all the herbs-->
 	<div class="row">
 		{% for herb in herbs %}

@@ -13,6 +13,10 @@
 
 /*---- Navbar ---*/
 
+.usernam-nav h5 { text-align: center;
+                  vertical-align: middle;
+                  line-height: 90px; }
+
 .logo {height: 40px;
        width: 180px}
 
@@ -69,11 +73,14 @@ li a:hover { background-color: rgba(60, 109, 3, 0.719);
                   top:50%;}
 
 .search_form {display: flex;
-              justify-content: center;  }
+              justify-content: center;  
+               margin: 5px 0;}
 
-.search_form button { background-color: whitesmoke;
-                      color: black;
-                      }
+.search-button{ background-color: white;
+                color: green;
+                border-radius: 0.5px solid green;
+                padding: 2px; 
+              }
 
 .no-result { margin: auto;
              width: 50%;
@@ -398,4 +405,48 @@ input[type=text]:focus {
                 border-bottom-left-radius: 0;
                 border-left:none;}
 
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

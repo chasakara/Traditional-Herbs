@@ -34,9 +34,11 @@
         <li class="nav-item">   
             <a class=" nav-link" title="Logout" href="{{url_for('logout')}}">Logout</a>
         </li>
-        <div>
+        <li>
+       
             <h5> {{ session.username }}</h5>
-        </div>
+        
+        </li>
             {% else %}
         <li> 
             <a class=" nav-link" href="{{url_for('all_herbs')}}" title="List your all herbs">All Herbs</a>

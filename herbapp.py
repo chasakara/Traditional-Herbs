@@ -94,8 +94,8 @@ def add_herb():
             herbs = mongo.db.herbs
             herbs.insert({
                 'username': session['username'],
-                'herb_name': request.form.get('herb_name'),
-                'herb_cure': request.form.get('herb_cure'),
+                'herb_name': request.form.get('herb_name').capitalize(),
+                'herb_cure': request.form.get('herb_cure').capitalize(),
                 'herb_description': request.form.get('herb_description'),
                 'herb_preparation': request.form.get('herb_preparation'),
                 'herb_usage': request.form.get('herb_usage'),
