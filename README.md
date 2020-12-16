@@ -13,7 +13,7 @@ traditional herbs to cure some mild infections or mild pains
 
 * to know the effectiveness rating of the herbs 
 
-* to read reviews about the medicine 
+* to read reviews about the herbs 
 
 * to add my own herbs
 
@@ -21,7 +21,9 @@ traditional herbs to cure some mild infections or mild pains
 
 * to delete my own herbs
 
-* to add my own herbs
+* to add a picture of the herb 
+
+* to see the images of what the herb looks like 
 
 ### Future Features
 
@@ -63,8 +65,63 @@ traditional herbs to cure some mild infections or mild pains
 
 ### Testing
 
+## Validation Services
+
+HTML Placeholder tag not allowed when the input type is time - Placeholder removed All other errors are from Jinja not being reconised in the validator
+
+CSS No Errors Found
+
+JQuery No Errors found
+
+Python No Errors found
+
+## Manual Testing
+
+Logo:
+The logo is working as expected, when clicked it will take you to the home page
+
+All herbs:
+
+My Herbs:
+
+
+Add herb:
+The logo is working as expected, when clicked it will take you to the home page
+
+Delete herb:
+The logo is working as expected, when clicked it will take you to the home page
+
+Edit herb:
+The logo is working as expected, when clicked it will take you to the home page
+
+Add review:
+The logo is working as expected, when clicked it will take you to the home page
+
+
+Log in:
+
+Log out:
+
+Sign up:
+
+Bugs
+Error when trying to add herb after update to my herbs post method. Fix Add username variable to add herb function
+
+Method not inputing to db on add or edit forms. Name attribute missing and causing null value to be returned. Fix Add name attribute to method input
+
+Session[is_superuser] causing KeyError: 'is_superuser' for new users when they try log out. Error being caused by session.pop(is_superuser) after creating new value pair in the register function. Fix Removed session.pop(is_superuser) to resolve this error.
+
+Welcome text breaks out of welcome-content div at 269px. This will not be fixed it affects the UI of most mobile screen sizes fixing causes text to look squashed on bigger mobile screens
+
 ### Problems encountered
- 
+
+* The images of the herbs could not aling well on smaller screens  
+
+* The add review future was not adding the review to the actuall herb it was added to 
+
+* The code to display 8 on 8 herbs cards on page was not working 
+
+* The diffult herb images that has to be displayed if a user does not add the herb image was not working displaying 
 
 ### Deployed on Heroku at { website URL HERE Traditional Herbs].
 

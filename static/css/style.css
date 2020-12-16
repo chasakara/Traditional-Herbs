@@ -349,7 +349,7 @@ textarea:focus {
 
 .social-icon-copyright { margin: 5px 0;}
 
-.social-links { border-top: 10px solid limegreen;}
+.social-links { border-top: 1px solid limegreen;}
 
 .social-links-center { display: flex;
                        justify-content: center;
