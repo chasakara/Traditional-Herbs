@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="container">
-<h4 class="user's reviveiws heading ">User's Reviews</h4>
-	<div class="herbimage">
-				{% if herb.herb_image %}
-				<img src="{{herb.herb_image}}" class="herb_image card-img-top  img-thumbnail  img-fluid" alt="{{herb.herb_name}}">
-  {% else %}
-				<img src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
-            class="herb_image card-img-top img-thumbnail   img-fluid " alt="No Herb image available" />
-  {% endif %}
+  <h4 class="user's reviveiws heading">User's Reviews</h4>
+  <div class="herbimage">
+    {% if herb.herb_image %}
+    <img
+      src="{{herb.herb_image}}"
+      class="herb_image card-img-top img-thumbnail img-fluid"
+      alt="{{herb.herb_name}}"
+    />
+    {% else %}
+    <img
+      src="{{ url_for('static', filename='herbsimages/herb_placeholder.jpg') }}"
+      class="herb_image card-img-top img-thumbnail img-fluid"
+      alt="No Herb image available"
+    />
+    {% endif %}
+  </div>
+  <div>
+    {% for review in reviews %}
+    <div class="usersreviewsdivider">
+      <div class="userreviewscontainer">
+        <p>Posted by:{{review.username}} on {{review.date_added}}</p>
+        {{ review.your_review }}
       </div>
-	<div>
-		{% for review in reviews %}
-		<div class="usersreviewsdivider">
-			<div class="userreviewscontainer">
-				<p> Posted by:{{review.username}} on {{review.date_added}} </p>
-				{{ review.your_review }}
-			</div>
-		</div>
-        {% if session_name == herb.username %}
-        	<div class="addreviewdiv">
-							<a href="{{ url_for('add_review', herb_id=herb._id )}}" class="btn btn-primary Addreview">Add review</a>
-						</div>
-        	{% else %}
-            {% endif %}
+    </div>
+    {% if session_name == herb.username %}
+    <div class="addreviewdiv">
+      <a
+        href="{{ url_for('add_review', herb_id=herb._id )}}"
+        class="btn btn-primary Addreview"
+        >Add review</a
+      >
+    </div>
+    {% else %} {% endif %}
+  </div>
+  {% endfor %}
 </div>
-		{% endfor %}	
-	</div>
-</div>
+
 {% endblock %}

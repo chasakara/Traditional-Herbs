@@ -1,7 +1,7 @@
 # Traditional Herbs 
 
-Traditional Herbs is a website that encourages the use of 
-traditional herbs to cure some mild infections or mild pains 
+Traditional Herbs is a website that encourages the use of some simple yet effective
+ herbs to cure some mild infections or mild pains 
 
 ### Features
 
@@ -28,6 +28,8 @@ traditional herbs to cure some mild infections or mild pains
 ### Future Features
 
 ### Wireframes
+
+[https://github.com/chasakara/Traditional-Herbs/blob/master/static/herbsimages/wireframes] Wireframes
 
 ### Technologies Used 
 
@@ -81,37 +83,33 @@ Logo:
 The logo is working as expected, when clicked it will take you to the home page
 
 All herbs:
+The all herbs link is working as expected, when clicked it will take you to the page displaying all herbs in data base
 
 My Herbs:
-
+The my herbs link is working as expected, when clicked it will take the user to the page with his/her herbs he/she have created 
 
 Add herb:
-The logo is working as expected, when clicked it will take you to the home page
+The add herb link is working as expected, when clicked it will take you to the page were the user will add a herb 
 
 Delete herb:
-The logo is working as expected, when clicked it will take you to the home page
+The delete herb button is working as expected, when clicked it will delete the useer's herb 
 
 Edit herb:
-The logo is working as expected, when clicked it will take you to the home page
+The edit herb button is working as expected, when clicked it will take the user to the herb to edit it
 
 Add review:
-The logo is working as expected, when clicked it will take you to the home page
+The add review button is working as expected, when clicked it will take the user to a page to add a review for that particular herb
 
 
 Log in:
+Log in is working as expected, when clicked it will take the user to a log in page
 
 Log out:
+Log out is working as expected, when clicked it log out the user from that current session 
 
 Sign up:
+Sign up linnk is working as expected, when click it will take the user to a sign up page 
 
-Bugs
-Error when trying to add herb after update to my herbs post method. Fix Add username variable to add herb function
-
-Method not inputing to db on add or edit forms. Name attribute missing and causing null value to be returned. Fix Add name attribute to method input
-
-Session[is_superuser] causing KeyError: 'is_superuser' for new users when they try log out. Error being caused by session.pop(is_superuser) after creating new value pair in the register function. Fix Removed session.pop(is_superuser) to resolve this error.
-
-Welcome text breaks out of welcome-content div at 269px. This will not be fixed it affects the UI of most mobile screen sizes fixing causes text to look squashed on bigger mobile screens
 
 ### Problems encountered
 
