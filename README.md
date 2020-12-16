@@ -3,8 +3,6 @@
 Traditional Herbs is a website that encourages the use of some simple yet effective
  herbs to cure some mild infections or mild pains 
 
-### Features
-
 #### As a user l want 
 
 * to know what each herb cures 
@@ -24,6 +22,20 @@ Traditional Herbs is a website that encourages the use of some simple yet effect
 * to add a picture of the herb 
 
 * to see the images of what the herb looks like 
+
+### Features
+
+* Navigation bar - 
+
+* My Herbs - A link that takes you to page that displays all herbs in the data base
+
+* Add Herbs - A link that takes you to page that display a form to fill about your herb information
+
+* Log in - A link that takes you to page that display a form were a user fill in about their registered information
+
+* Log out - A link that takes takes the user out of session and direct the user to the log in page 
+
+* Sign up - A link that takes you to a page that display a form for a user register to fill in their information 
 
 ### Future Features
 
