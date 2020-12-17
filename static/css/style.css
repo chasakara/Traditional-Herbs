@@ -316,7 +316,7 @@ textarea:focus {
 .usersreviewdiv {margin: 4px 0 ;
                  color: white;}
 
-.usersreviewsdivider {    width: 80%;
+.usersreviewsdivider {    width: 75%;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -328,7 +328,7 @@ textarea:focus {
 .userreviewscontainer {border-radius: 5px;
                        padding: 5px;
                        width: 80%;
-                       background-color: gray;}
+                       background-color: rgb(243, 243, 243);}
 
 .Addreviewbutton { text-decoration: none;
                    background-color: blue;
