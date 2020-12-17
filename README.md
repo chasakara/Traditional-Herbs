@@ -85,7 +85,7 @@ HTML Placeholder tag not allowed when the input type is time - Placeholder remov
 
 CSS No Errors Found
 
-JQuery No Errors found
+JavaScript No Errors found
 
 Python No Errors found
 
@@ -174,7 +174,13 @@ app_setup.py and create the .env file anywhere you'd like
 
 ### Media
 
+The photos used 
+
 ### Acknowdgements
+
+Precious_Mentor, mentor.
+
+code-institute-room.slack.com.
 
 #### This website is for educational purpose only 
 
