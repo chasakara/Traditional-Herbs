@@ -25,7 +25,7 @@ Traditional Herbs is a website that encourages the use of some simple yet effect
 
 ### Features
 
-* Navigation bar - 
+* Navigation bar - A link that takes you to home page 
 
 * My Herbs - A link that takes you to page that displays all herbs in the data base
 
