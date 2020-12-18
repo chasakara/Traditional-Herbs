@@ -77,7 +77,7 @@ Traditional Herbs is a website that encourages the use of some simple yet effect
 
 #### Libraries 
 
-[https://fonts.google.com/] - to import fonts.
+[https://fonts.google.com/](to import font).
 
 [https://fontawesome.com/] - to provide icons used across the project.
 
