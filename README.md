@@ -139,6 +139,14 @@ Sign up linnk is working as expected, when click it will take the user to a sign
 
 * The diffult herb images that has to be displayed if a user does not add the herb image was not working displaying 
 
+## Compatibility and Responsiveness
+
+This website had been being tested during the development across multiple browsers (Chrome, Safary, Opera, FireFox, Internet Explorer) and on multiple devices: mobile (iPhone 5, 6, 8, Samsung Galaxy 8, 9, ), tabletsand laptops (with HiDPI and MDPI and touch screens).
+As well as on Google Chrome's developer tools to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.
+I also used Am I Responsive online tool for checking responsiveness on different devices.
+Plenty of changes were made and necessary media queries added to make the website fully responsive.
+The one issue was found that website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on the other browsers.
+
 # Deployed on Heroku at { website URL HERE Traditional Herbs].
 
 * Clone the repository by copying the clone url
