@@ -139,7 +139,7 @@ Sign up linnk is working as expected, when click it will take the user to a sign
 
 * The diffult herb images that has to be displayed if a user does not add the herb image was not working displaying 
 
-### Deployed on Heroku at { website URL HERE Traditional Herbs].
+# Deployed on Heroku at { website URL HERE Traditional Herbs].
 
 * Clone the repository by copying the clone url
 
@@ -160,7 +160,7 @@ app_setup.py and create the .env file anywhere you'd like
 
 * git init to create a new repository
 
-* heroku git:remote -a (name of your heroku app, no brackets)
+* heroku git:remote -a Traditional-Herbs
 
 * git add .
 
@@ -174,13 +174,24 @@ app_setup.py and create the .env file anywhere you'd like
 
 * restart all dynos and open your heroku app
 
-### Credits
+## Local
 
-### Contents 
+
+This project can be ran locally by going to this Repository link and clicking on the Clone or Download button and copying the link provided.
+
+In your IDE, open a Terminal window and change to the directory where you want to clone this project and type Git clone "your copied link".
+
+After pressing Enter the project will be created and cloned locally.
+
+Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
+
+Github Repo: 
+
+# Credits
 
 ### Media
 
-The photos used 
+The photos used on the home page were taken from google 
 
 ### Acknowdgements
 
