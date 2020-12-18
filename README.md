@@ -147,7 +147,7 @@ I also used Am I Responsive online tool for checking responsiveness on different
 Plenty of changes were made and necessary media queries added to make the website fully responsive.
 The one issue was found that website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on the other browsers.
 
-# Deployed on Heroku at { website URL HERE Traditional Herbs].
+# Deployed on Heroku at [https://traditional-herbs.herokuapp.com/].
 
 * Clone the repository by copying the clone url
 
@@ -199,7 +199,7 @@ Github Repo:
 
 ### Media
 
-The photos used on the home page were taken from google 
+The photos used on the home page carousel were taken from google 
 
 ### Acknowdgements
 
