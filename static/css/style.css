@@ -1,269 +1,396 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rajdhani|Ruda&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani|Ruda&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Piedra&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 
-* { margin: 0;
-    padding: 0;}
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /*body {background-color:rgb(187, 219, 171);}*/
 
 /*---- Navbar ---*/
 
-.usernam-nav h5 { text-align: center;
-                  vertical-align: middle;
-                  line-height: 90px; }
+.usernam-nav h5 {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
 
-.logo {height: 40px;
-       width: 180px}
+.logo {
+  height: 40px;
+  width: 180px;
+}
 
-.navbarBg {background-color: red;}
+.navbarBg {
+  background-color: green;
+}
 
-.navbar {padding-top: 0;
-         padding-left: 0.2rem;
-         padding-bottom: 0;}
+.navbar {
+  padding-top: 0;
+  padding-left: 0.2rem;
+  padding-bottom: 0;
+}
 
-ul { list-style-type: none;
-     margin: 0;
-     padding: 0;
-     overflow: hidden; }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-li { float: right;}
+li {
+  float: right;
+}
 
-li a { color: white;
-       text-align: center;
-       padding: 5px 16px;
-       text-decoration: none;}
+li a {
+  color: white;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+}
 
-li a:hover { background-color: rgba(60, 109, 3, 0.719);
-             font-size: 105%;}
+li a:hover {
+  background-color: rgba(60, 109, 3, 0.719);
+  font-size: 105%;
+}
 
-.username { display: inline-block;
-            color: red;}      
+.username {
+  display: inline-block;
+  color: red;
+}
 
-.navbar-toggler-icon {background-color:gray;
-                       
-                      border-radius: 5px;}       
+.navbar-toggler-icon {
+  background-color: gray;
+
+  border-radius: 5px;
+}
 
 /*---- Home Page ---*/
 
-.home-image-container { height: 450px;}
+.home-image-container {
+  height: 450px;
+}
 
-.home-image-img img { background-size: cover;
-                      background-repeat: no-repeat;
-                      width: 98.9vw;
-                      height: 450px;
-                    }
- 
-.carousel-caption { background-color: rgba(0, 0, 0, 0.6);
-                    color: white;
-                    padding: 7px;
-                  }
+.home-image-img img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 98.9vw;
+  height: 450px;
+}
 
-.featuredherbs { margin: 10px;
-                 padding: 3px;}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 7px;
+}
 
-.featuredherbs h2 { font-family: 'Piedra', cursive;}
+.featuredherbs {
+  margin: 10px;
+  padding: 3px;
+}
 
-.featured4herbs { border-top:1px solid limegreen;
-                  border-bottom: 5px;
-                  top:50%;}
+.featuredherbs h2 {
+  font-family: "Piedra", cursive;
+}
 
-.search_form {display: flex;
-              justify-content: center;  
-               margin: 5px 0;}
+.featured4herbs {
+  border-top: 1px solid limegreen;
+  border-bottom: 5px;
+  top: 50%;
+}
 
-.search-button{ background-color: white;
-                color: green;
-                border-radius: 0.5px solid green;
-                padding: 2px; 
-              }
+.search_form {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
 
-.no-result { margin: auto;
-             width: 50%;
-             border: 3px solid green;
-             padding: 10px; }
+.search-button {
+  background-color: white;
+  color: green;
+  border-radius: 0.5px solid green;
+  padding: 2px;
+}
+
+.no-result {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
 
 /*---- My Herbs ---*/
- 
- .yourherbs { margin: 10px 0; }
 
-.yourherbs h6 { font-weight: bold;
-                font-size: 150%;
-                text-align: center;}
+.yourherbs {
+  margin: 10px 0;
+}
 
-.container-fluid {padding: 0;}
+.yourherbs h6 {
+  font-weight: bold;
+  font-size: 150%;
+  text-align: center;
+}
 
-h5 { text-align: center;
-     padding: 0;
-     margin: 0;}
+.container-fluid {
+  padding: 0;
+}
 
-.rev { background-color: black;
-       color: white;}
+h5 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 
-span{ color: green;}
+.rev {
+  background-color: black;
+  color: white;
+}
 
-.cu{ color: black;
-     padding: 0;
-     margin: 0;
-     background-color: lightgreen;}
+span {
+  color: green;
+}
 
-.card-body { padding: 0;}
+.cu {
+  color: black;
+  padding: 0;
+  margin: 0;
+  background-color: lightgreen;
+}
 
-.card-title { margin: 0;}
+.card-body {
+  padding: 0;
+}
 
-.card-title span a { background-color: green;
-                     color: white;
-                     font-size: 20px;
-                     width: 130px;}
+.card-title {
+  margin: 0;
+}
 
-.card { margin: 10px;
-        border: 2px solid green;
-        border-radius: 4px;}
+.card-title span a {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  width: 130px;
+}
 
-.rev-display { display: inline-block;}
+.card {
+  margin: 10px;
+  border: 2px solid green;
+  border-radius: 4px;
+}
+
+.rev-display {
+  display: inline-block;
+}
 
 /*---- All herbs Page Herbcards ---*/
 
-.allherbsBg { background-image: url("../herbsimages/allherbsbackground.jpg");       
-              background-repeat: no-repeat;
-              background-size: cover;}
+.allherbsBg {
+  background-image: url("../herbsimages/allherbsbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-.allherbstitle p { margin: 0 auto;}
+.allherbstitle p {
+  margin: 0 auto;
+}
 
-.reviewblock  { display: flex;  
-                justify-content: space-between;  }
+.reviewblock {
+  display: flex;
+  justify-content: space-between;
+}
 
-.review { padding: 4px;}
+.review {
+  padding: 4px;
+}
 
-.plus { padding: 4px;
-        text-decoration: none;}
+.plus {
+  padding: 4px;
+  text-decoration: none;
+}
 
-.reviewblock a:hover {font-size: 120%;}
+.reviewblock a:hover {
+  font-size: 120%;
+}
 
-.cardadjustment a:hover { box-shadow: 3px 3px 5px 6px #ccc; }
+.cardadjustment a:hover {
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
 
-.herb_image {height: 230px;}
+.herb_image {
+  height: 230px;
+}
 
-.pagination-center { text-align: center;
-                     margin: 15px 0;}
+.pagination-center {
+  text-align: center;
+  margin: 15px 0;
+}
 
-.pagination {display: inline-block;}
+.pagination {
+  display: inline-block;
+}
 
-.button-pignation li {float: left;}
+.button-pignation li {
+  float: left;
+}
 
-.button-pignation a { background-color: limegreen;
-                      color: black;
-                      border-radius: 5px; 
-                      margin: 0 10px;
-                      font-size: 18px;}
+.button-pignation a {
+  background-color: limegreen;
+  color: black;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+}
 
-.button-pignation a.active {  background-color:rgb(51, 138, 55);
-                              color: white;
-                              border: 3px dotted #4CAF50;}
+.button-pignation a.active {
+  background-color: rgb(51, 138, 55);
+  color: white;
+  border: 3px dotted #4caf50;
+}
 
-
-.button-pignation li a:hover { background-color: rgba(60, 97, 19, 0.719);
-                               font-size: 125%;}
+.button-pignation li a:hover {
+  background-color: rgba(60, 97, 19, 0.719);
+  font-size: 125%;
+}
 
 /*---- Herb Page ---*/
 
-.herbGb {background-image: url("../herbsimages/herbbackground.jpg");       
-         background-repeat: no-repeat;
-         background-size: cover;}
+.herbGb {
+  background-image: url("../herbsimages/herbbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-.herbBgcolor {background-color: white;
-              margin-top: 7px;
-              margin-bottom: 67px;}
+.herbBgcolor {
+  background-color: white;
+  margin-top: 7px;
+  margin-bottom: 67px;
+}
 
-.herbimage{ display: block;
-            margin: 11px auto;
-            height: 400px;
-            width: 75%;}
+.herbimage {
+  display: block;
+  margin: 11px auto;
+  height: 400px;
+  width: 75%;
+}
 
-.herbimage img {height: 400px;}
+.herbimage img {
+  height: 400px;
+}
 
-.herbnamecure_Bg {background-color: limegreen;
-                  margin: 10px auto;  
-                  width: 75%;}
+.herbnamecure_Bg {
+  background-color: limegreen;
+  margin: 10px auto;
+  width: 75%;
+}
 
-.herb_image_container {width: 90%;
-                       margin: 5px auto;
-                       height: 400px;}
+.herb_image_container {
+  width: 90%;
+  margin: 5px auto;
+  height: 400px;
+}
 
+.herbDescription {
+  border: 1px solid limegreen;
+  padding: 7px;
+  width: 75%;
+  margin: 5px auto;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 7px;
+}
 
-.herbDescription {border: 1px solid limegreen;
-                  padding: 7px;
-                  width: 75%;
-                  margin: 5px auto;
-                  text-align: center;
-                  background-color: lightgray;
-                  border-radius: 7px;}
+.herbPreparation {
+  border: 1px solid limegreen;
+  padding: 7px;
+  width: 75%;
+  margin: 5px auto;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 7px;
+}
 
-.herbPreparation { border: 1px solid limegreen;
-                  padding: 7px;
-                  width: 75%;
-                  margin: 5px auto;
-                  text-align: center;
-                  background-color: lightgray;
-                  border-radius: 7px;}
+.herbPreparation1 {
+  margin: 5px 0;
+}
 
-.herbPreparation1 { margin: 5px 0; }
+.herbUsage {
+  border: 1px solid limegreen;
+  padding: 7px;
+  width: 75%;
+  margin: 5px auto;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 7px;
+}
 
-.herbUsage { border: 1px solid limegreen;
-             padding: 7px;
-             width: 75%;
-             margin: 5px auto;
-             text-align: center;
-             background-color: lightgray;
-             border-radius: 7px;}
+.writenby h6 {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
 
-.writenby h6 { display: flex;
-               justify-content: center;
-               font-size: 12px; 
-               font-weight: bold;}
+.datewriten {
+  text-align: center;
+}
 
-.datewriten {text-align: center;}
+.DeleteHerb {
+  background-color: red;
+  color: white;
+  margin: 0 10px;
+  border-radius: 6px;
+}
 
-.DeleteHerb {background-color: red;
-             color: white;
-             margin: 0 10px;
-             border-radius: 6px;}
+.EditHerb {
+  background-color: green;
+  color: white;
 
-.EditHerb { background-color: green;
-            color: white;
-            
-            border-radius: 6px;}
+  border-radius: 6px;
+}
 
-.Addreview {text-decoration: none;
-            background-color: blue;
-            color:white;
-            
-            border-radius: 6px;}
+.Addreview {
+  text-decoration: none;
+  background-color: blue;
+  color: white;
 
-.Addreview a { text-decoration: none;}
+  border-radius: 6px;
+}
 
-.addreviewdiv { margin: 10px 0; }
+.Addreview a {
+  text-decoration: none;
+}
 
-.editDeleteAddreviewButtons { display: flex;
-                              justify-content: space-evenly;
-                              margin: 17px 0;}
+.addreviewdiv {
+  margin: 10px 0;
+}
+
+.editDeleteAddreviewButtons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 17px 0;
+}
 
 /*---- Add Herb ---*/
 
-.addherbimagebackground {background-color: white; }
+.addherbimagebackground {
+  background-color: white;
+}
 
-.inputstyles { border-top:none;
-                border-bottom-color:black;
-                border-right:none;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-                border-left:none;}
+.inputstyles {
+  border-top: none;
+  border-bottom-color: black;
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
 
-input[type=text]:focus {
+input[type="text"]:focus {
   background-color: rgb(174, 243, 174);
 }
 
@@ -271,146 +398,209 @@ textarea:focus {
   background-color: rgb(174, 243, 174);
 }
 
-/*---- Edit Herb ---*/       
+/*---- Edit Herb ---*/
 
-.edit_herb_container_color { width: 80 vw;}
+.edit_herb_container_color {
+  width: 80 vw;
+}
 
 /*---- Sign up Form ---*/
 
-.ccccccc { margin-right: auto;
-           margin-top: 120px;
-           margin-bottom: 120px;
-           background: rgba(0, 0, 0, 0.8);
-           padding: 10px;
-           width: 60%;
-           color: white;
-           border-radius: 5px;
-           margin-left: auto;}
+.ccccccc {
+  margin-right: auto;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  width: 60%;
+  color: white;
+  border-radius: 5px;
+  margin-left: auto;
+}
 
-.signuploinBg {background-image: url("../herbsimages/loginsignup.jpg");
-               background-repeat: none;
-               background-size: cover; }
-    
-.loginsignupbutton {background-color: rgb(102, 247, 102);
-                    color:black;
-                    height:30px;
-                    padding: 3px;}
+.signuploinBg {
+  background-image: url("../herbsimages/loginsignup.jpg");
+  background-repeat: none;
+  background-size: cover;
+}
 
-.already {margin:3px 0;}
+.loginsignupbutton {
+  background-color: rgb(102, 247, 102);
+  color: black;
+  height: 30px;
+  padding: 3px;
+}
 
+.already {
+  margin: 3px 0;
+}
 
 /*-- Add Review Page --*/
 
-.submitReview {margin: 5px;}
+.submitReview {
+  margin: 5px;
+}
 
-.submitReviewbutton { background-color: green;
-                      color:white;
-                      width:70px;
-                      height: 38px; }
+.submitReviewbutton {
+  background-color: green;
+  color: white;
+  width: 70px;
+  height: 38px;
+}
 
-/*--- User Reviews ----*/   
+/*--- User Reviews ----*/
 
-.usersreviews {background-color: white;
-               margin: 15px 0 ;}
+.usersreviews {
+  background-color: white;
+  margin: 15px 0;
+}
 
-.usersreviewdiv {margin: 4px 0 ;
-                 color: white;}
+.usersreviewdiv {
+  margin: 4px 0;
+  color: white;
+}
 
-.usersreviewsdivider {    width: 75%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}  
+.usersreviewsdivider {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.usersheading {margin: 5px 0;}
+.usersheading {
+  margin: 5px 0;
+}
 
-.userreviewscontainer {border-radius: 5px;
-                       padding: 5px;
-                       width: 80%;
-                       background-color: rgb(243, 243, 243);}
+.userreviewscontainer {
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
 
-.Addreviewbutton { text-decoration: none;
-                   background-color: blue;
-                   color: white;
-                   display: flex;
-                   justify-content: center;
-                   padding: 5px;
-                   border-radius: 5px; }
+  background-color: rgb(196, 194, 194);
+}
 
-.writereview { margin: 10px 0;}
+.Addreviewbutton {
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.writereview {
+  margin: 10px 0;
+}
 
 /*--- Search result page ---*/
 
-.balsamiq { margin-left: 7px;}
-
-
+.balsamiq {
+  margin-left: 7px;
+}
 
 /*---- footer---*/
 
-.copyright { margin: 2px 0;
-             display: flex;
-             justify-content: center;
-             align-items: center;}
-
-.social-icon-copyright { margin: 5px 0;}
-
-.social-links { border-top: 1px solid limegreen;}
-
-.social-links-center { display: flex;
-                       justify-content: center;
-                       align-items: center;}
-
-.social-links-center a { text-decoration: none;
-                              }
-
-.fa-facebook {color: blue;}
-
-.fa-instagram  {color:rgb(190, 94, 94); }
-
-.fa-twitter { color: rgb(45, 228, 241);}
-
-.fa-youtube {color: red;}
-
-.underline {border-bottom: 22px;}
-
-.herbHeadings {font-family: 'Oswald', sans-serif;
-               letter-spacing: 1.2px;}
-
-.addyourherb { margin: 5px 10px;}
-
-.addHerb { margin-bottom: 10px;
-           margin-top:5px;}
-
-@media only screen and (max-device-width:450px) {
-
-.herbnamecure_Bg { width: 99.9%;}
-
-.herbimage { width: 99.9%;}
-
-.herbDescription { width: 99.9%;}
-
-.herbPreparation { width: 99.9%;}
-
-.herbUsage { width: 99.9%;}
-
+.copyright {
+  margin: 2px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media only screen and (max-device-width:450px) {
-
-.ccccccc { width: 95%;}
-
-input[type=text]:focus {
-  background-color: rgb(174, 243, 174);
+.social-icon-copyright {
+  margin: 5px 0;
 }
 
-.inputstyles { border-top:none;
-               border-bottom-color:black;
-                border-right:none;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-                border-left:none;}
+.social-links {
+  border-top: 1px solid limegreen;
+}
 
+.social-links-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-center a {
+  text-decoration: none;
+}
+
+.fa-facebook {
+  color: blue;
+}
+
+.fa-instagram {
+  color: rgb(190, 94, 94);
+}
+
+.fa-twitter {
+  color: rgb(45, 228, 241);
+}
+
+.fa-youtube {
+  color: red;
+}
+
+.underline {
+  border-bottom: 22px;
+}
+
+.herbHeadings {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.addyourherb {
+  margin: 5px 10px;
+}
+
+.addHerb {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+@media only screen and (max-device-width: 450px) {
+  .herbnamecure_Bg {
+    width: 99.9%;
+  }
+
+  .herbimage {
+    width: 99.9%;
+  }
+
+  .herbDescription {
+    width: 99.9%;
+  }
+
+  .herbPreparation {
+    width: 99.9%;
+  }
+
+  .herbUsage {
+    width: 99.9%;
+  }
+}
+
+@media only screen and (max-device-width: 450px) {
+  .ccccccc {
+    width: 95%;
+  }
+
+  input[type="text"]:focus {
+    background-color: rgb(174, 243, 174);
+  }
+
+  .inputstyles {
+    border-top: none;
+    border-bottom-color: black;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
 }
 
 .sidenav {
@@ -448,11 +638,15 @@ input[type=text]:focus {
 }
 
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 0.5s;
   padding: 16px;
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }

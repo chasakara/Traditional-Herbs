@@ -39,6 +39,12 @@ Traditional Herbs is a website that encourages the use of some simple yet effect
 
 ### Future Features
 
+* A rating feature will be put on after a user add a reviews
+
+* An add video feature wiill be added were a user who know moe about any herbs will upload 
+
+* Herbs with most rating will appear first on featured herbs 
+
 ### Wireframes
 
 [https://github.com/chasakara/Traditional-Herbs/blob/master/static/herbsimages/wireframes] Wireframes
