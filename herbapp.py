@@ -28,7 +28,7 @@ CKEditor(app)
 def index():
     herbs = mongo.db.herbs
     featured = ([herb for herb in herbs.aggregate
-                ([{"$sample": {"size": 4}}])])
+                 ([{"$sample": {"size": 4}}])])
     return render_template('index.html', featured=featured)
 
 
@@ -65,11 +65,11 @@ def my_herbs():
     pages = range(1, int(math.ceil(number_of_your_herbs /
                                    limit_per_page)) + 1)
     herbs = herbs.find().sort('_id', -1).skip((current_page - 1) *
-                                                limit_per_page).limit(limit_per_page)
+                                              limit_per_page).limit(limit_per_page)
     return render_template("my_herbs.html", title="My Herbs",
                            session_name=session['username'],
                            herbs=mongo.db.herbs.find(
-                            {'username': session_name}),
+                               {'username': session_name}),
                            current_page=current_page, pages=pages,
                            number_of_your_herbs=number_of_your_herbs)
 
@@ -256,4 +256,4 @@ def page_not_found(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
-            debug=True)
+            debug=False)

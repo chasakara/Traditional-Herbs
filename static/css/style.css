@@ -544,9 +544,6 @@ textarea:focus {
   color: red;
 }
 
-.underline {
-  border-bottom: 22px;
-}
 
 .herbHeadings {
   font-family: "Oswald", sans-serif;
