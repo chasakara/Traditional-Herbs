@@ -83,9 +83,9 @@ Traditional Herbs is a website that encourages the use of some simple yet effect
 
 [https://getbootstrap.com/] - Is a framework to help you design websites faster and easier. It includes HTML and CSS based design templates
 
-### Testing
+# Testing
 
-## Validation Services
+### Validation Services
 
 HTML Placeholder tag not allowed when the input type is time - Placeholder removed All other errors are from Jinja not being reconised in the validator
 
@@ -95,7 +95,7 @@ JavaScript No Errors found
 
 Python No Errors found
 
-## Manual Testing
+### Manual Testing
 
 Logo:
 The logo is working as expected, when clicked it will take you to the home page
