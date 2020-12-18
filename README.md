@@ -147,7 +147,7 @@ I also used Am I Responsive online tool for checking responsiveness on different
 Plenty of changes were made and necessary media queries added to make the website fully responsive.
 The one issue was found that website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on the other browsers.
 
-# Deployed on Heroku at [https://traditional-herbs.herokuapp.com/].
+# Deployed on Heroku at [https://traditional-herbs.herokuapp.com/]
 
 * Clone the repository by copying the clone url
 
@@ -193,7 +193,7 @@ After pressing Enter the project will be created and cloned locally.
 
 Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.
 
-Github Repo: 
+Github Repo: [https://github.com/chasakara/Traditional-Herbs.git]
 
 # Credits
 
